@@ -1,4 +1,4 @@
-## Names of contributors and links to their social accounts
+## Names of contributors and links to their social profiles
 
 ### Venetius Ohanyere Onyekechukwu `Author`
 
