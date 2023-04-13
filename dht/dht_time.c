@@ -1,5 +1,40 @@
 #include <stdio.h>
 #include <time.h>
+#include <string.h>
+
+/*time_t t;
+
+time(&t);
+
+char *date_time = ctime(&t);*/
+static char _day[3];
+static char _month[3];
+static char _day_of_month[2];
+static char _time_[5];
+static char _year[4];
+
+/*_day[0] = *date_time;
+_day[1] = *(date_time + 1);
+_day[2] = *(date_time + 2);
+
+_month[0] = *(date_time + 4);
+_month[1] = *(date_time + 5);
+_month[2] = *(date_time + 6);
+
+_day_of_month[0] = *(date_time + 8);
+_day_of_month[1] = *(date_time + 9);
+
+_time_[0] = *(date_time + 11);
+_time_[1] = *(date_time + 12);
+_time_[2] = *(date_time + 13);
+_time_[3] = *(date_time + 14);
+_time_[4] = *(date_time + 15);
+
+_year[0] = *(date_time + 20);
+_year[1] = *(date_time + 21);
+_year[2] = *(date_time + 22);
+_year[3] = *(date_time + 23);
+*/
 
 /**
  * day - function to get current day of week
@@ -8,23 +43,25 @@
  *
  * Return: return the current day of the week
 */
-
-const char *day(void)
+static char *we(void)
 {
 	time_t t;
-
 	time(&t);
-
 	char *date_time = ctime(&t);
-	char _day[3], *Www;
+	static char str[100];
 
-	_day[0] = *date_time;
-	_day[1] = *(date_time + 1);
-	_day[2] = *(date_time + 2);
+	for (int i = 5; i <= 8; i++)
+	{
+		str[i] = *(date_time + i);
+	}
+	return (str);
+}
 
-	Www = _day;
+static char *day(void)
+{
+	static char see[3];
+	//see[0 = we();
 
-	return (Www);
 }
 
 /**
@@ -41,15 +78,14 @@ const char *month(void)
 
 	time(&t);
 	char *date_time = ctime(&t);
-	char _month[3], *Mmm;
+	//static char _month[3];
 
-	_month[0] = *(date_time + 4);
+	_month[0] = *(date_time + 4);_day_of_month[0] = *(date_time + 8);
+        _day_of_month[1] = *(date_time + 9);
 	_month[1] = *(date_time + 5);
 	_month[2] = *(date_time + 6);
 
-	Mmm = _month;
-
-	return (Mmm);
+	return (_month);
 }
 
 /**
@@ -66,14 +102,14 @@ const char *day_of_month(void)
 
 	time(&t);
 	char *date_time = ctime(&t);
-	char _day_of_month[2], *dd;
+	//static char _day_of_month[2], *dd;
 
 	_day_of_month[0] = *(date_time + 8);
 	_day_of_month[1] = *(date_time + 9);
 
-	dd = _day_of_month;
+	//dd = _day_of_month;
 
-	return (dd);
+	return (_day_of_month);
 }
 
 /**
@@ -90,7 +126,7 @@ const char *_time(void)
 
 	time(&t);
 	char *date_time = ctime(&t);
-	char _time_[5], *hhmm;
+	//static char _time_[5], *hhmm;
 
 	_time_[0] = *(date_time + 11);
 	_time_[1] = *(date_time + 12);
@@ -98,8 +134,8 @@ const char *_time(void)
 	_time_[3] = *(date_time + 14);
 	_time_[4] = *(date_time + 15);
 
-	hhmm = _time_;
-	return (hhmm);
+	//hhmm = _time_;
+	return (_time_);
 }
 
 /**
@@ -116,19 +152,39 @@ const char *year(void)
 
 	time(&t);
 	char *date_time = ctime(&t);
-	char _year[4], *yyyy;
+	//static char _year[4], *yyyy;
 
 	_year[0] = *(date_time + 20);
 	_year[1] = *(date_time + 21);
 	_year[2] = *(date_time + 22);
 	_year[3] = *(date_time + 23);
 
-	yyyy = _year;
-	return (yyyy);
+	//yyyy = _year;
+	return (_year);
 }
 
 int main(void)
 {
-	printf("%s\n%s\n%s\n%s\n%s\n", day(), month(), day_of_month(), _time(), year());
+	/*const char *__day = day(); //, month(), day_of_month(), _time(), year());
+	const char *__month = month();
+	const char *__day_of_month = day_of_month();
+	const char *__time = _time();
+	const char *__year = year();
+	const char *_we = we();*/
+
+	/*printf("%.3s ", __day);
+	printf("%.3s ", __month);
+	printf("%.2s ", __day_of_month);
+	printf("%.5s ", __time);
+	printf("%.4s %s", __year, _we);
+
+	char s[100];
+
+	strcpy(s, __day);
+
+	printf("Okay!! %c", s[2]);
+	//month();*/
+
+	printf("%s\n%s\n", we(), day());
 	return (0);
 }
