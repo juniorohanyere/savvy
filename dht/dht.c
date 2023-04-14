@@ -21,7 +21,7 @@ int main(void)
 	printf("Also note that you will be penalized ");
 	printf("for wrong answers\n\n");
 
-	questions_to_answer();
+	get_questions();
 
 	return (0);
 }
