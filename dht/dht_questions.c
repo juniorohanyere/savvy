@@ -78,7 +78,7 @@ int _rand(int num)
  * Return: return nothing
 */
 
-void questions_to_answer(void)
+void get_questions(void)
 {
 	while (1)
 	{
