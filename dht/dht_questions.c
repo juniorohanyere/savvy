@@ -7,6 +7,9 @@
 #include "../questions/dht_questions_c.h"
 #include "dht_questions.h"
 
+static int score;
+static float percentage;
+
 /**
  * _isnumber - User defined function
  *
@@ -87,14 +90,10 @@ void questions_to_answer(void)
 		char str[1000];
 
 		flag = scanf("%s", str);
-
-		if (flag == EOF)	/**
-					 * checks if ctrl-D is entered
-					 * if so, the program exits
-					*/
+		/* check if CTRL-D is entered, if so, the program should exit successfully */
+		if (flag == EOF)
 
 			exit(EXIT_SUCCESS);
-
 		int isnumber = _isnumber(str);
 
 		if (isnumber == 1)
@@ -109,6 +108,8 @@ void questions_to_answer(void)
 				printf("\n");
 
 				show_questions(num_questions);
+
+				/* score and percentage should be printed at this point */
 			}
 			else
 				printf("\n \033[0;31mInvalid input\033[0m\n\n");
@@ -135,7 +136,6 @@ void questions_to_answer(void)
 
 void show_questions(int num)
 {
-	int score = 0, flag;
 	char *pass = "\033[0;32mPassed\033[0m";
 	char *fail_a = "\033[0;31mFailed \033[0;32m[a]\033[0m";
 	char *fail_b = "\033[0;31mFailed \033[0;32m[b]\033[0m";
@@ -154,7 +154,7 @@ void show_questions(int num)
 		/* creating a string variable to accept answers from user */
 		char ans[1];
 
-		flag = scanf("%s", ans);
+		int flag = scanf("%s", ans);
 
 		if (flag == EOF)
 			exit(EXIT_SUCCESS);
@@ -171,7 +171,15 @@ void show_questions(int num)
 		else
 			score = score;
 	}
-	float percentage = ((float) score / num) * 100;
+}
 
-	printf("\n\tScore = %d\n\tPercentage = %.f%\n\n", score, percentage);
+/**
+ * score_percentage - function to return score
+ *
+ * Return: return the score
+*/
+
+int get_score(void)
+{
+	return (score);
 }
