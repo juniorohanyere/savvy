@@ -20,7 +20,7 @@ static int score;
  * Return: Returns 0 or 1
 */
 
-int _isnumber(char str[])
+int isnumber(char str[])
 {
 	int length, flag;
 
@@ -93,9 +93,9 @@ void get_questions(void)
 		if (flag == EOF)
 
 			exit(EXIT_SUCCESS);
-		int isnumber = _isnumber(str);
+		int _isnumber = isnumber(str);
 
-		if (isnumber == 1)
+		if (_isnumber == 1)
 		{
 			/* convert the string to integer */
 			num_questions = atoi(str);
