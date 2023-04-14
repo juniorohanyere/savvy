@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "../lib/dht_lib.h"
+#include "dht_questions.h"
 
 /**
  * main - Entry point

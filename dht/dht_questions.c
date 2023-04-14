@@ -5,7 +5,7 @@
 #include <time.h>
 #include "../answers/dht_answers_c.h"
 #include "../questions/dht_questions_c.h"
-#include "dht_lib.h"
+#include "dht_questions.h"
 
 /**
  * _isnumber - User defined function
@@ -173,5 +173,5 @@ void show_questions(int num)
 	}
 	float percentage = ((float) score / num) * 100;
 
-	printf("\n\tScore = %d\n\tPercentage = %.f\n\n", score, percentage);
+	printf("\n\tScore = %d\n\tPercentage = %.f%\n\n", score, percentage);
 }
