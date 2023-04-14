@@ -7,6 +7,8 @@
 #include "../questions/dht_questions_c.h"
 #include "dht_questions.h"
 
+#define TRUE 1
+
 static int score;
 
 /**
@@ -79,7 +81,7 @@ int _rand(int num)
 
 void get_questions(void)
 {
-	while (1)
+	while (TRUE)
 	{
 		printf("Please enter your desired number of questions. ");
 		printf("The recommended is also the minimum you can answer, ");
