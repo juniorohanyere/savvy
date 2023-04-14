@@ -12,4 +12,8 @@ Pull requests should be made giving a clear explanation of what has changed.
 
 ## Creating issues
 
-Please `issues` should make use of tags when possible. For instance, an issue relating to a bug should use the `bug` tag.
+Please `issues` should be marked with tags when possible. For instance, an issue relating to a bug should make use of the `bug` tag.
+
+## Reporting bugs
+
+Bug reports should be done by creating an issue on this repository, with a `bug` tag. Alternatively report at junohanyere@gmail.com or twinjnr.blogspot.com/bug-reports.
