@@ -57,9 +57,9 @@ static char *questions[1000] = {
 	/* index 6 */
 
 	"Which of the following is a valid FOR statement in C ?\n\n"
-	"a. for (int a = 0; a < b; a ++)\n{\n\tprintf(\"%d\n\", a);\n}\n\n"
-	"b. for (int a == 0; a < b; a++)\n{\n\tprintf(\"%d\n\", a);\n}\n\n"
-	"c. for (int a = 0; a < b; a++)\n{\n\tprintf(\"%d\n\", a);\n}\n\n"
+	"a. for (int a = 0; a < b; a ++)\n   {\n\tprintf(\"%d\", a);\n   }\n\n"
+	"b. for (int a == 0; a < b; a++)\n   {\n\tprintf(\"%d\", a);\n   }\n\n"
+	"c. for (int a = 0; a < b; a++)\n   {\n\tprintf(\"%d\", a);\n   }\n\n"
 	"d. I don't know",
 
 	/* index 7 */
