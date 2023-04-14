@@ -3,7 +3,7 @@
 
 int _isnumber(char str[]);
 int _rand(int num);
-void questions_to_answer(void);
+void get_questions(void);
 void show_questions(int num);
 int get_score(void);
 
