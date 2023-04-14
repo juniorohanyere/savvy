@@ -10,7 +10,7 @@
 static int score;
 
 /**
- * _isnumber - User defined function
+ * isnumber - User defined function
  *
  * @str: String variable to check and validate
  *
@@ -71,7 +71,7 @@ int _rand(int num)
 }
 
 /**
- * questions_to_answer - function to accept number of questions,
+ * get_questions - function to accept number of questions,
  *			 to be answered, from user
  *
  * Return: return nothing
