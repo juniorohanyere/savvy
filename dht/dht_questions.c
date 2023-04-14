@@ -8,7 +8,6 @@
 #include "dht_questions.h"
 
 static int score;
-static float percentage;
 
 /**
  * _isnumber - User defined function
