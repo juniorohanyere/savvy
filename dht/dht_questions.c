@@ -175,7 +175,7 @@ void show_questions(int num)
 }
 
 /**
- * score_percentage - function to return score
+ * get_score - function to return score
  *
  * Return: return the score
 */
