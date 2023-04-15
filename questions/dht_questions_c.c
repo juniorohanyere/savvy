@@ -112,3 +112,20 @@ const char *question(int num)
 {
 	return (questions[num]);
 }
+
+/**
+ * get_length - function to get the total length
+ *		of the questions array
+ *
+ * Description: should be used in place of the manual
+ *		assignment of range value in the
+ *		show_questions function in the
+ *		do_hard_things/dht/dht_questions.c file
+ *
+ * Return: return the length of the questions array
+*/
+
+int get_length(void)
+{
+	return (strlen(questions) - 1);	/* this doesn't seem right */
+}
