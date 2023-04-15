@@ -2,7 +2,7 @@
 
 /* questions here */
 
-static char *questions[1000] = {
+static char *questions[] = {
 
 	/* index 0 */
 
