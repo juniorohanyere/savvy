@@ -5,6 +5,17 @@
 #include "dht_questions.h"
 
 /**
+ * commands - function to accept command line arguments
+ *
+ * Return: always return 0
+*/
+
+int commands(int num, char *str[])
+{
+
+}
+
+/**
  * main - Entry point
  *
  * Description: A program to aid learning for software engineers
