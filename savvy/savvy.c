@@ -24,7 +24,8 @@ int commands(int num, char *str[])
 			 * and a warm welcome message
 			*/
 			printf("Welcome to savvy\n");
-			printf("Please use the '-h' or '--help' option to view a list of available commands and their use");
+			printf("Please use the '-h' or '--help' option");
+			printf(" to view a list of available commands and their use");
 		}
 		else if (num == 2)
 		{
@@ -43,12 +44,16 @@ int commands(int num, char *str[])
 			}
 			else if (strcmp(str[1], "-i") == 0 || strcmp(str[1], "--intranet") == 0)
 			{
-				/* connects the user online, quiz is meant to be taken with set of other users */
+				/**
+				 * connects the user online,
+				 * quiz is meant to be taken with set of other users
+				 */
 			}
 			else
 			{
-				printf("Unknown option: \033[0;31m%[the option the user entered]s\033[0m\n");
-				printf("Please use the help option to view a list of available commands and their use");
+				printf("Unknown option: \033[0;31m%s\033[0m\n", str[1]);
+				printf("Please use the help option ");
+				printf("to view a list of available commands and their use");
 			}
 		}
 		else if (num == 3)
@@ -65,6 +70,10 @@ int commands(int num, char *str[])
 
 /**
  * main - Entry point
+ *
+ * @argc: number of command line arguments to be used
+ * @argv: pointer array holding the arguments entered
+ *	  (see commnds function in this file)
  *
  * Description: A program to aid learning for software engineers
  *
