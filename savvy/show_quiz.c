@@ -3,12 +3,15 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#include "../answers/dht_answers_c.h"
-#include "../questions/dht_questions_c.h"
-#include "dht_lib.h"
+
+#include "../quiz_ref/c/ref.h"
+#include "../quiz/c/quiz.h"
+#include "show_quiz.h"
+
+static int score;
 
 /**
- * _isnumber - User defined function
+ * isnumber - User defined function
  *
  * @str: String variable to check and validate
  *
@@ -18,7 +21,7 @@
  * Return: Returns 0 or 1
 */
 
-int _isnumber(char str[])
+int isnumber(char str[])
 {
 	int length, flag;
 
@@ -52,32 +55,36 @@ int _isnumber(char str[])
 }
 
 /**
- * _rand - Function to return a random number
- * @num: First and only parameter, the total number of questions
+ * random - Function to return a random number
  *
  * Description: Returns a random number
- *		between 0 and the total number of questions
+ *		between 0 and the total number of available  questions
+ *		The total number of available questions
+ *		denoted by range here, is gotten from the
+ *		get_length function in the savvy/quiz/c/quiz.c file
  *
  * Return: Return random number
 */
 
-int _rand(int num)
+int _random(void)
 {
+	int range = get_length();
+
 	srand((unsigned int)time(NULL));
 
-	return (rand() % num);
+	return (rand() % range);
 }
 
 /**
- * questions_to_answer - function to accept number of questions,
+ * get_questions - function to accept number of questions,
  *			 to be answered, from user
  *
  * Return: return nothing
 */
 
-void questions_to_answer(void)
+void get_questions(void)
 {
-	while (1)
+	while (TRUE)
 	{
 		printf("Please enter your desired number of questions. ");
 		printf("The recommended is also the minimum you can answer, ");
@@ -87,17 +94,13 @@ void questions_to_answer(void)
 		char str[1000];
 
 		flag = scanf("%s", str);
-
-		if (flag == EOF)	/**
-					 * checks if ctrl-D is entered
-					 * if so, the program exits
-					*/
+		/* check if CTRL-D is entered, if so, the program should exit successfully */
+		if (flag == EOF)
 
 			exit(EXIT_SUCCESS);
+		int _isnumber = isnumber(str);
 
-		int isnumber = _isnumber(str);
-
-		if (isnumber == 1)
+		if (_isnumber == 1)
 		{
 			/* convert the string to integer */
 			num_questions = atoi(str);
@@ -109,6 +112,8 @@ void questions_to_answer(void)
 				printf("\n");
 
 				show_questions(num_questions);
+
+				/* score and percentage should be printed at this point */
 			}
 			else
 				printf("\n \033[0;31mInvalid input\033[0m\n\n");
@@ -135,7 +140,6 @@ void questions_to_answer(void)
 
 void show_questions(int num)
 {
-	int score = 0, flag;
 	char *pass = "\033[0;32mPassed\033[0m";
 	char *fail_a = "\033[0;31mFailed \033[0;32m[a]\033[0m";
 	char *fail_b = "\033[0;31mFailed \033[0;32m[b]\033[0m";
@@ -143,10 +147,10 @@ void show_questions(int num)
 
 	for (int i = 0; i < num; i++)
 	{
-		int range = 10, random = _rand(range), j = i + 1;
+		int range = 10, j = i + 1;
 
 		/* Display a question */
-		const char *_question = question(random);
+		const char *_question = question(_random());
 
 		printf("\n");
 		printf("%d. %s\n\n ", j, _question);
@@ -154,13 +158,13 @@ void show_questions(int num)
 		/* creating a string variable to accept answers from user */
 		char ans[1];
 
-		flag = scanf("%s", ans);
+		int flag = scanf("%s", ans);
 
 		if (flag == EOF)
 			exit(EXIT_SUCCESS);
 
 		/* validate if the answer is correct */
-		const char *validator = answers(random, ans);
+		const char *validator = answers(_random(), ans);
 
 		printf(" %s\n", validator);
 		if (strcmp(validator, pass) == 0)
@@ -171,7 +175,21 @@ void show_questions(int num)
 		else
 			score = score;
 	}
+<<<<<<< HEAD:lib/dht_lib.c
 	float percentage = ((float) score / num) * 100;
 
 	printf("\n\tScore = %d\n\tPercentage = %.f\n\n", score, percentage);
+=======
+}
+
+/**
+ * get_score - function to return score
+ *
+ * Return: return the score
+*/
+
+int get_score(void)
+{
+	return (score);
+>>>>>>> dev:savvy/show_quiz.c
 }

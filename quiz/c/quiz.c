@@ -2,7 +2,7 @@
 
 /* questions here */
 
-static char *questions[1000] = {
+static char *questions[] = {
 
 	/* index 0 */
 
@@ -57,9 +57,9 @@ static char *questions[1000] = {
 	/* index 6 */
 
 	"Which of the following is a valid FOR statement in C ?\n\n"
-	"a. for (int a = 0; a < b; a ++)\n{\n\tprintf(\"%d\n\", a);\n}\n\n"
-	"b. for (int a == 0; a < b; a++)\n{\n\tprintf(\"%d\n\", a);\n}\n\n"
-	"c. for (int a = 0; a < b; a++)\n{\n\tprintf(\"%d\n\", a);\n}\n\n"
+	"a. for (int a = 0; a < b; a ++)\n   {\n\tprintf(\"%d\", a);\n   }\n\n"
+	"b. for (int a == 0; a < b; a++)\n   {\n\tprintf(\"%d\", a);\n   }\n\n"
+	"c. for (int a = 0; a < b; a++)\n   {\n\tprintf(\"%d\", a);\n   }\n\n"
 	"d. I don't know",
 
 	/* index 7 */
@@ -89,10 +89,10 @@ static char *questions[1000] = {
 	/* index 10 */
 
 	"What is the equivalent code of the following statement in WHILE LOOP format ?\n\n"
-	"\tfor (a = 1; a <= 100; a++)\n\tprintf(\"%d\n\", a * a);\n\n"
-	"a. while (a)\n{\n\tprintf(\"%d\n\", a * a);\n\ta++;\n}\n\n"
-	"b. while (a <= 100)\n{\tprintf(\"%d\n\", a + a);\n\ta++;\n}\n\n"
-	"c. while (a <= 100)\n{\tprintf(\"%d\n\", a * a);\n\ta++;\n}\n\n"
+	"\tfor (a = 1; a <= 100; a++)\n\t\tprintf(\"%d\", a * a);\n\n"
+	"a. while (a)\n   {\n\tprintf(\"%d\", a * a);\n\ta++;\n   }\n\n"
+	"b. while (a <= 100)\n   {\n\tprintf(\"%d\", a + a);\n\ta++;\n   }\n\n"
+	"c. while (a <= 100)\n   {\n\tprintf(\"%d\", a * a);\n\ta++;\n   }\n\n"
 	"d. I don't know",
 };
 
@@ -111,4 +111,21 @@ static char *questions[1000] = {
 const char *question(int num)
 {
 	return (questions[num]);
+}
+
+/**
+ * get_length - function to get the total length
+ *		of the questions array
+ *
+ * Description: should be used in place of the manual
+ *		assignment of range value in the
+ *		show_questions function in the
+ *		do_hard_things/dht/dht_questions.c file
+ *
+ * Return: return the length of the questions array
+*/
+
+int get_length(void)
+{
+	return (*(&questions + 1) - questions);
 }
