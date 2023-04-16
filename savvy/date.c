@@ -3,9 +3,9 @@
 /**
  * day_of_month - function to get current day of month
  *
- * Description: day of week is formatted in 'Www'
+ * Description: day of week is in two digits, formatted in 'DD'
  *
- * Return: return the current day of the week
+ * Return: return the current day of the month
 */
 
 int day_of_month(void)
@@ -20,7 +20,7 @@ int day_of_month(void)
 /**
  * month - function to get the current month of the year
  *
- * Description: month is formatted in 'Mmm'
+ * Description: month is in two digits, formatted in 'MM'
  *
  * Return: return the current month of the year
 */
