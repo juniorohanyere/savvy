@@ -23,7 +23,7 @@ int commands(int num, char *str[])
 			 * A short description of the program
 			 * and a warm welcome message
 			*/
-			printf("Welcome to do_hard_things\n");
+			printf("Welcome to savvy\n");
 			printf("Please use the '-h' or '--help' option to view a list of available commands and their use");
 		}
 		else if (num == 2)
@@ -36,7 +36,7 @@ int commands(int num, char *str[])
 				*/
 			}
 			else if (strcmp(str[1], "-v") == 0 || strcmp(str[1], "--version") == 0)
-				printf("do_hard_things %[version number]s created by Venetius Ohanyere");
+				printf("savvy %[version number]s created by Twin J");
 			else if (strcmp(str[1], "-S") == 0 || strcmp(str[1], "--summary") == 0)
 			{
 				 /* display a statistics of the most recent quiz */
@@ -75,7 +75,7 @@ int main(int argc, char *argv[])
 {
 	printf("Welcome To SAVVY\n");
 	printf("Try to answer the questions YOURSELF, ");
-	printf("so you can know how much you're IMPROVING.");
+	printf("so you can know how much you're improving.");
 	printf("YOU ARE NOT FORCED!\n");
 	printf("Also note that you will be PENALIZED ");
 	printf("for wrong answers\n\n");
