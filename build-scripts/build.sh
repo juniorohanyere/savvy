@@ -1,4 +1,6 @@
 #!/bin/bash
 
 # script to compile and link the projects source files
-gcc ../dht/dht.c ../dht/dht_questions.c ../questions/dht_questions_c.c ../answers/dht_answers_c.c -o ../dht/dht.out
+# generate an output file named savvy.out
+
+gcc ../savvy/savvy.c ../savvy/show_quiz.c ../quiz/c/quiz.c ../quiz_ref/c/ref.c -o ../savvy/savvy.out

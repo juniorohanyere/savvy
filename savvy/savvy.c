@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "dht_questions.h"
+#include "show_quiz.h"
 
 /**
  * commands - function to accept command line arguments
@@ -22,12 +22,13 @@ int commands(int num, char *str[])
 			/**
 			 * A short description of the program
 			 * and a warm welcome message
-			 * and a list of usable commands for the program
 			*/
+			printf("Welcome to do_hard_things\n");
+			printf("Please use the '-h' or '--help' option to view a list of available commands and their use");
 		}
 		else if (num == 2)
 		{
-			if (strcmp(str[1], "-h") == 0 || strcmp(str[2], "--help") == 0)
+			if (strcmp(str[1], "-h") == 0 || strcmp(str[1], "--help") == 0)
 			{
 				/**
 				 * display a help message
@@ -72,16 +73,16 @@ int commands(int num, char *str[])
 
 int main(int argc, char *argv[])
 {
-	printf("Welcome To Do_Hard_Things\n");
+	printf("Welcome To SAVVY\n");
 	printf("Try to answer the questions YOURSELF, ");
-	printf("so you can know how much you're improving.");
+	printf("so you can know how much you're IMPROVING.");
 	printf("YOU ARE NOT FORCED!\n");
-	printf("Also note that you will be penalized ");
+	printf("Also note that you will be PENALIZED ");
 	printf("for wrong answers\n\n");
 
 	commands(argc, argv);
 
-	/* get_questions(); */
+	get_questions();
 
 	return (0);
 }

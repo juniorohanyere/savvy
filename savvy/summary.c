@@ -17,6 +17,6 @@ char *get_summary(void)
 {
 	float percentage = get_percentage();
 
-	if (percentage < 40)
+	if (percentage <= 40)
 		char *fail[];
 }

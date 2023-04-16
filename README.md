@@ -1,20 +1,20 @@
 ## About
 
-`do_hard_things` is an open source project distributed under the `GPL-3.0 license` terms. Owned and authored by [Twin J](https://www.linkedin.com/in/juniorohanyere)
+`savvy` is an open source project distributed under the `GPL-3.0 license` terms. Owned and authored by [Twin J](https://www.linkedin.com/in/juniorohanyere)
 
 This project is currently undergoing development. A `pre-release` of the program has been published on [github](https://github.com/juniorohanyere/do_hard_things/releases). No official release yet, but I hope to get it ready sooner.
 
-[Learn more](https://twinjnr.blogspot.com) about `do_hard_things`.
+[Learn more](https://twinjnr.blogspot.com) about `savvy`.
 
 ## Overview
 
 This project shall be loaded with lots of questions based on the programming languages on earth.
 
-### Programmig languages currently in store
+### Programmig languages currently loaded
 
 - C programming language
 
-**Contribution** and **Support** is appreciated.
+**Contributions** and **Supports** are appreciated.
 
 ## Contact
 
@@ -37,7 +37,7 @@ This project shall be loaded with lots of questions based on the programming lan
 
 ## Installation
 
-do_hard_things can be installed from the [github release page](https://github.com/juniorohanyere/do_hard_things/releases). A binary file is available on the release page for linux systems. It was tested on a `Kali Linux` system.
+**savvy** can be installed from the [github release page](https://github.com/juniorohanyere/do_hard_things/releases). A binary file is available on the release page for linux systems. It was tested on a `Kali Linux` system.
 You can also [build from source] in case the binary release does not work for you. There are two releases for that. One in [zip] format and the other in [tar.gz] format.
 Also check out [setting up do_hard_things on android devices].
 

@@ -3,11 +3,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#include "../answers/dht_answers_c.h"
-#include "../questions/dht_questions_c.h"
-#include "dht_questions.h"
 
-#define TRUE 1
+#include "../quiz_ref/c/ref.h"
+#include "../quiz/c/quiz.h"
+#include "show_quiz.h"
 
 static int score;
 
@@ -56,20 +55,24 @@ int isnumber(char str[])
 }
 
 /**
- * _rand - Function to return a random number
- * @num: First and only parameter, the total number of questions
+ * random - Function to return a random number
  *
  * Description: Returns a random number
- *		between 0 and the total number of questions
+ *		between 0 and the total number of available  questions
+ *		The total number of available questions
+ *		denoted by range here, is gotten from the
+ *		get_length function in the savvy/quiz/c/quiz.c file
  *
  * Return: Return random number
 */
 
-int _rand(int num)
+int _random(void)
 {
+	int range = get_length();
+
 	srand((unsigned int)time(NULL));
 
-	return (rand() % num);
+	return (rand() % range);
 }
 
 /**
@@ -144,10 +147,10 @@ void show_questions(int num)
 
 	for (int i = 0; i < num; i++)
 	{
-		int range = 10, random = _rand(range), j = i + 1;
+		int range = 10, j = i + 1;
 
 		/* Display a question */
-		const char *_question = question(random);
+		const char *_question = question(_random());
 
 		printf("\n");
 		printf("%d. %s\n\n ", j, _question);
@@ -161,7 +164,7 @@ void show_questions(int num)
 			exit(EXIT_SUCCESS);
 
 		/* validate if the answer is correct */
-		const char *validator = answers(random, ans);
+		const char *validator = answers(_random(), ans);
 
 		printf(" %s\n", validator);
 		if (strcmp(validator, pass) == 0)

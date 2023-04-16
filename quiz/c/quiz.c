@@ -89,10 +89,10 @@ static char *questions[] = {
 	/* index 10 */
 
 	"What is the equivalent code of the following statement in WHILE LOOP format ?\n\n"
-	"\tfor (a = 1; a <= 100; a++)\n\tprintf(\"%d\n\", a * a);\n\n"
-	"a. while (a)\n{\n\tprintf(\"%d\n\", a * a);\n\ta++;\n}\n\n"
-	"b. while (a <= 100)\n{\tprintf(\"%d\n\", a + a);\n\ta++;\n}\n\n"
-	"c. while (a <= 100)\n{\tprintf(\"%d\n\", a * a);\n\ta++;\n}\n\n"
+	"\tfor (a = 1; a <= 100; a++)\n\t\tprintf(\"%d\", a * a);\n\n"
+	"a. while (a)\n   {\n\tprintf(\"%d\", a * a);\n\ta++;\n   }\n\n"
+	"b. while (a <= 100)\n   {\n\tprintf(\"%d\", a + a);\n\ta++;\n   }\n\n"
+	"c. while (a <= 100)\n   {\n\tprintf(\"%d\", a * a);\n\ta++;\n   }\n\n"
 	"d. I don't know",
 };
 
@@ -127,5 +127,5 @@ const char *question(int num)
 
 int get_length(void)
 {
-	return (strlen(questions) - 1);	/* this doesn't seem right */
+	return (*(&questions + 1) - questions);
 }
