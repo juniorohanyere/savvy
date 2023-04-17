@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 /**
  * home - function to print a short description
  *	  of the savvy program to the standard output
