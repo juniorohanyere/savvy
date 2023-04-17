@@ -7,7 +7,9 @@
 #include "../quiz_ref/c/ref.h"
 #include "../quiz/c/quiz.h"
 #include "show_quiz.h"
+#include "summary.h"
 
+static int num_questions;
 static int score;
 
 /**
@@ -90,7 +92,7 @@ void get_questions(void)
 		printf("The recommended is also the minimum you can answer, ");
 		printf("which is 10 >> ");
 
-		int num_questions, flag;
+		int flag;
 		char str[1000];
 
 		flag = scanf("%s", str);
@@ -175,18 +177,25 @@ void show_questions(int num)
 		else
 			score = score;
 	}
-	float percentage = ((float) score / num) * 100;
-
-	printf("\n\tScore = %d\n\tPercentage = %.f\n\n", score, percentage);
+	summary();
 }
 
 /**
- * get_score - function to return score
+ * get_num_score - function to return
+ *		   the number of questions entered by user
+ *		   and the score gotten from the quiz
  *
- * Return: return the score
+ * Return: return the an integer array containing
+ *		  the number of qustions and the score
 */
 
-int get_score(void)
+int *get_num_score(void)
 {
-	return (score);
+	int array[2], *p;
+
+	array[0] = num_questions;
+	array[1] = score;
+	p = array;
+
+	return (p);
 }

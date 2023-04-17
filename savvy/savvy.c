@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "./options/arg_1.h"
+#include "./options/arg_2.h"
 #include "show_quiz.h"
 
 /**
@@ -18,43 +20,12 @@ int commands(int num, char *str[])
 	if (num <= 5)
 	{
 		if (num == 1)
-		{
-			/**
-			 * A short description of the program
-			 * and a warm welcome message
-			*/
-			printf("Welcome to savvy\n");
-			printf("Please use the '-h' or '--help' option");
-			printf(" to view a list of available commands and their use");
-		}
+			arg_1();
 		else if (num == 2)
 		{
-			if (strcmp(str[1], "-h") == 0 || strcmp(str[1], "--help") == 0)
-			{
-				/**
-				 * display a help message
-				 * a guide on the use of the usable commands
-				*/
-			}
-			else if (strcmp(str[1], "-v") == 0 || strcmp(str[1], "--version") == 0)
-				printf("savvy %[version number]s created by Twin J");
-			else if (strcmp(str[1], "-S") == 0 || strcmp(str[1], "--summary") == 0)
-			{
-				 /* display a statistics of the most recent quiz */
-			}
-			else if (strcmp(str[1], "-i") == 0 || strcmp(str[1], "--intranet") == 0)
-			{
-				/**
-				 * connects the user online,
-				 * quiz is meant to be taken with set of other users
-				 */
-			}
-			else
-			{
-				printf("Unknown option: \033[0;31m%s\033[0m\n", str[1]);
-				printf("Please use the help option ");
-				printf("to view a list of available commands and their use");
-			}
+			char version[] = "v1.0.0";
+
+			arg_2(version, str[1]);
 		}
 		else if (num == 3)
 		{
@@ -63,8 +34,7 @@ int commands(int num, char *str[])
 	}
 	else
 	{
-		printf("Unknown option: \033[0;31m%[the option the user entered]s\033[0m\n");
-		printf("Please use the help option to view a list of available commands and their use");
+		help_message();
 	}
 }
 
