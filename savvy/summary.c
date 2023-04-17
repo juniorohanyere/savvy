@@ -37,11 +37,11 @@ void get_summary(float num)
 {
 
 	if (num <= 39)
-		printf("\033[0;31m%.f\033[0m", num);
+		printf("\033[0;31m%.f\033[0m\n", num);
 	else if (num >= 40 && num <= 69)
-		printf("\033[0;33m%.f\033[0m", num);
+		printf("\033[0;33m%.f\033[0m\n", num);
 	else
-		printf("\033[0;32m%.f\033[0m", num);
+		printf("\033[0;32m%.f\033[0m\n", num);
 }
 
 /**
@@ -56,9 +56,9 @@ void summary(void)
 	float perentage = get_percentage();
 
 	if (perentage <= 39)
-		printf("\033[0;31m%.f\033[0m", perentage);
+		printf(RED "%.f" DEFAULT "\n", perentage);
 	else if (perentage >= 40 && perentage <= 69)
-		printf("\033[0;33m%.f\033[0m", perentage);
+		printf(YELLOW "%.f" DEFAULT "\n", perentage);
 	else
-		printf("\033[0;32m%.f\033[0m", perentage);
+		printf(GREEN "%.f" DEFAULT "\n", perentage);
 }
