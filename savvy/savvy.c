@@ -25,7 +25,7 @@ int commands(int num, char *str[])
 		{
 			char version[] = "v1.0.0";
 
-			arg_2(version, str[1]);
+			arg_2(version, str);
 		}
 		else if (num == 3)
 		{
@@ -52,14 +52,14 @@ int commands(int num, char *str[])
 
 int main(int argc, char *argv[])
 {
+	commands(argc, argv);
+
 	printf("Welcome To SAVVY\n");
 	printf("Try to answer the questions YOURSELF, ");
 	printf("so you can know how much you're improving.");
 	printf("YOU ARE NOT FORCED!\n");
 	printf("Also note that you will be PENALIZED ");
 	printf("for wrong answers\n\n");
-
-	commands(argc, argv);
 
 	get_questions();
 

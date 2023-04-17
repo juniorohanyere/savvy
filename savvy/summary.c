@@ -1,4 +1,6 @@
-#include "show_quiz.c"
+#include <stdio.h>
+
+#include "show_quiz.h"
 
 /**
  * get_percentage - function to calculate the percentage from score
@@ -8,16 +10,16 @@
 
 float get_percentage(void)
 {
-	int num_questions, score, *p;
-	float percentage;
+	int nm_questions, sccore, *p;
+	float prcentage;
 
 	p = get_num_score();
-	num_questions = p[0]
-	score = p[1];
+	nm_questions = p[0];
+	sccore = p[1];
 
-	percentage = ((float) score / num_questions) * 100;
+	prcentage = ((float) sccore / nm_questions) * 100;
 
-	return (percentage);
+	return (prcentage);
 }
 
 /**
@@ -51,12 +53,12 @@ void get_summary(float num)
 
 void summary(void)
 {
-	float percentage = get_percentage();
+	float perentage = get_percentage();
 
-	if (percentage <= 39)
-		printf("\033[0;31m%.f\033[0m", percentage);
-	else if (percentage >= 40 && <= 69)
-		printf("\033[0;33m%.f\033[0m", percentage);
+	if (perentage <= 39)
+		printf("\033[0;31m%.f\033[0m", perentage);
+	else if (perentage >= 40 && perentage <= 69)
+		printf("\033[0;33m%.f\033[0m", perentage);
 	else
-		printf("\033[0;32m%.f\033[0m", percentage);
+		printf("\033[0;32m%.f\033[0m", perentage);
 }

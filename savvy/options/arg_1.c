@@ -15,8 +15,8 @@ void arg_1(void)
 {
 	printf("Welcome to savvy\n");
 	printf("Savvy is a command line program.\n");
-	printf("Aimed at increasing the tendency");
-	printf("At which programmers, expecially newbies learn");
+	printf("Aimed at increasing the tendency\n");
+	printf("At which programmers, expecially newbies learn\n");
 
 	help_message();
 }
