@@ -55,13 +55,13 @@ int isnumber(char str[])
 }
 
 /**
- * random - Function to return a random number
+ * _random - Function to return a random number
  *
  * Description: Returns a random number
  *		between 0 and the total number of available  questions
  *		The total number of available questions
  *		denoted by range here, is gotten from the
- *		get_length function in the savvy/quiz/c/quiz.c file
+ *		get_length function (see get_length function from this file)
  *
  * Return: Return random number
 */
@@ -126,7 +126,7 @@ void get_questions(void)
 /**
  * show_questions - function to display the questions to the standard output
  * @num: number of questions entered by user
- *	 in the questions_to_answer function
+ *	 (see questions_to_answer function from this file)
  *
  * Description: displays the quetions based on the amount of question
  *		the user specified. Then validates if the answer
@@ -175,11 +175,9 @@ void show_questions(int num)
 		else
 			score = score;
 	}
-<<<<<<< HEAD:lib/dht_lib.c
 	float percentage = ((float) score / num) * 100;
 
 	printf("\n\tScore = %d\n\tPercentage = %.f\n\n", score, percentage);
-=======
 }
 
 /**
@@ -191,5 +189,4 @@ void show_questions(int num)
 int get_score(void)
 {
 	return (score);
->>>>>>> dev:savvy/show_quiz.c
 }
