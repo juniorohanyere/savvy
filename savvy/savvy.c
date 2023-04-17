@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "./options/arg_1.h"
-#include "./options/arg_2.h"
+#include "options/arg_1.h"
+#include "options/arg_2.h"
 #include "show_quiz.h"
 
 /**
