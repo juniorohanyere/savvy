@@ -1,5 +1,7 @@
 #include <string.h>
 
+#include "ref.h"
+
 /**
  * answers - function to validate answer
  * @num: generated random integer
@@ -17,25 +19,25 @@ const char *answers(int num, char str[])
 {
 	if ((num == 0 || num == 1 || num ==  3)
 	&& strcmp(str, "a") == 0)
-		return ("\033[0;32mPassed\033[0m");
+		return (GREEN "Passed" DEFAULT);
 	else if ((num == 2 || num == 4 || num == 9)
 	&& strcmp(str, "b") == 0)
-		return ("\033[0;32mPassed\033[0m");
+		return (GREEN "Passed" DEFAULT);
 	else if ((num == 5 || num == 6 || num == 7 || num == 8 || num == 10)
 	&& strcmp(str, "c") == 0)
-		return ("\033[0;32mPassed\033[0m");
+		return (GREEN "Passed" DEFAULT);
 	else if (strcmp(str, "d") == 0)
 		if (num == 0 || num == 1 || num == 3)
-			return ("\033[0;33mBetter luck next time \033[0;32m[a]\033[0m");
+			return (YELLOW "Better luck next time " GREEN "[a]" DEFAULT);
 		else if (num == 2 || num == 4)
-			return ("\033[0;33mBetter luck next time \033[0;32m[b]\033[0m");
+			return (YELLOW "Better luck next time " GREEN "[b]" DEFAULT);
 		else
-			return ("\033[0;33mBetter luck next time \033[0;32m[c]\033[0m");
+			return (YELLOW "Better luck next time " GREEN "[c]" DEFAULT);
 	else
 		if (num == 0 || num == 1 || num == 3)
-			return ("\033[0;31mFailed \033[0;32m[a]\033[0m");
+			return (RED "Failed " GREEN "[a]" DEFAULT);
 		else if (num == 2 || num == 4 || num == 9)
-			return ("\033[0;31mFailed \033[0;32m[b]\033[0m");
+			return (RED "Failed " GREEN "[b]" DEFAULT);
 		else
-			return ("\033[0;31mFailed \033[0;32m[c]\033[0m");
+			return (RED "Failed " GREEN "[c]" DEFAULT);
 }
