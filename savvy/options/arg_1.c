@@ -18,5 +18,5 @@ void arg_1(void)
 	printf("Aimed at increasing the tendency");
 	printf("At which programmers, expecially newbies learn");
 
-	help();
+	help_message();
 }
