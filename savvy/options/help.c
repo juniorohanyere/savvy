@@ -14,17 +14,17 @@
 
 void arg_2(char str[], char *str1[])
 {
-	if (strcmp(str1[1], "-h") == 0 || strcmp(str1[1], "--help")
+	if (strcmp(str1, "-h") == 0 || strcmp(str1, "--help")
 	{
 		/* display a list of useable command options */
 	}
-	else if (strcmp(str1[1], "-v") == 0 || strcmp(str1[1], "--version") == 0)
+	else if (strcmp(str1, "-v") == 0 || strcmp(str1, "--version") == 0)
 		printf("savvy \033[0;32]%s\033[0m created by Twin J", str);
-	else if (strcmp(str1[1], "-S") == 0 || strcmp(str[1], "--summary") == 0)
+	else if (strcmp(str1, "-S") == 0 || strcmp(str, "--summary") == 0)
 		get_summary();
 	else
 	{
-		printf("Unknown option: \033[0;31m%s\033[0m\n", str1[1]);
+		printf("Unknown option: \033[0;31m%s\033[0m\n", str1);
 		help_message();
 	}
 }
