@@ -2,7 +2,7 @@
 
 #define SUMMARY_H
 
-#define DEFAUL "\e[0m"
+#define DEFAULT "\e[0m"
 #define GREEN "\e[0;32m"
 #define RED "\e[0;31m"
 #define YELLOW "\e[0;33m"

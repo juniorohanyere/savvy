@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 #include "show_quiz.h"
+#include "summary.h"
 
 /**
  * get_percentage - function to calculate the percentage from score
