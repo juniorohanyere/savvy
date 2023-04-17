@@ -1,7 +1,7 @@
-#ifndef HOME_H
+#ifndef ARG_1_H
 
-#define HOME_H
+#define ARG_1_H
 
 void arg_1(void);
 
-#endif	/* HOME */
+#endif	/* ARG_1_H */
