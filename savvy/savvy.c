@@ -36,6 +36,7 @@ int commands(int num, char *str[])
 	{
 		help_message();
 	}
+	return (0);
 }
 
 /**
