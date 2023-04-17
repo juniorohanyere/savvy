@@ -2,6 +2,6 @@
 
 #define HOME_H
 
-void home(int num);
+void home(void);
 
 #endif	/* HOME */
