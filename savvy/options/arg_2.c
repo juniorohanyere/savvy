@@ -5,7 +5,8 @@
 #include "../summary.h"
 
 /**
- * help - function to print a help message to the standard output
+ * arg_2 - function to assign options for the second
+ *	   command line argument
  *
  * @str: string containing the current version number of the program
  * @str1: the argument passed to the command line
@@ -15,16 +16,17 @@
 
 void arg_2(char str[], char *str1[])
 {
-	if (strcmp(str1[1], "-h") == 0 || strcmp(str1[1], "--help") == 0)
+	if (strcmp(str1[1], "-h") || strcmp(str1[1], "--help"))
 	{
 		/* display a list of usable command options */
 	}
-	else if (strcmp(str1[1], "-v") == 0 || strcmp(str1[1], "--version") == 0)
+	else if (strcmp(str1[1], "-v") || strcmp(str1[1], "--version"))
 	{
 		printf("\n");
-		printf("savvy " GREEN "%s " DEFAULT "created by " BOLD_BLUE "Twin J" DEFAULT "\n\n", str);
+		printf("savvy " GREEN "%s " DEFAULT);
+		printf("created by " BOLD_BLUE "Twin J" DEFAULT "\n\n", str);
 	}
-	else if (strcmp(str1[1], "-S") == 0 || strcmp(str1[1], "--summary") == 0)
+	else if (strcmp(str1[1], "-S") || strcmp(str1[1], "--summary"))
 		get_summary(get_percentage());
 	else
 	{
@@ -34,6 +36,12 @@ void arg_2(char str[], char *str1[])
 		help_message();
 	}
 }
+
+/**
+ * help_message - function to print a help guide to the standard output
+ *
+ * Return: return nothing
+*/
 
 void help_message(void)
 {

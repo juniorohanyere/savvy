@@ -109,19 +109,19 @@ void get_questions(void)
 
 			if (num_questions >= 10)	/* Minimum required is 10 questions */
 			{
-				printf("\n\t\033[0;32m");
-				printf("You Requested To Answer %d Questions\033[0m\n", num_questions);
-				printf("\n");
+				printf("\n" GREEN);
+				printf("\tYou Requested To Answer %d Questions", num_questions);
+				printf(DEFAULT "\n\n");
 
 				show_questions(num_questions);
 
 				/* score and percentage should be printed at this point */
 			}
 			else
-				printf("\n \033[0;31mInvalid input\033[0m\n\n");
+				printf(RED "\n Invalid input" DEFAULT "\n\n");
 		}
 		else
-			printf("\n \033[0;31mInvalid input\033[0m\n\n");
+			printf(RED "\n Invalid input" DEFAULT "\n\n");
 	}
 }
 
@@ -142,17 +142,17 @@ void get_questions(void)
 
 void show_questions(int num)
 {
-	char *pass = "\033[0;32mPassed\033[0m";
-	char *fail_a = "\033[0;31mFailed \033[0;32m[a]\033[0m";
-	char *fail_b = "\033[0;31mFailed \033[0;32m[b]\033[0m";
-	char *fail_c = "\033[0;31mFailed \033[0;32m[c]\033[0m";
+	char *pass = GREEN "Passed" DEFAULT;
+	char *fail_a = RED "Failed " GREEN "[a]" DEFAULT;
+	char *fail_b = RED "Failed " GREEN "[b]" DEFAULT;
+	char *fail_c = RED "Failed " GREEN "[c]" DEFAULT;
 
 	for (int i = 0; i < num; i++)
 	{
-		int range = 10, j = i + 1;
+		int _rand = _random(), j = i + 1;
 
 		/* Display a question */
-		const char *_question = question(_random());
+		const char *_question = question(_rand);
 
 		printf("\n");
 		printf("%d. %s\n\n ", j, _question);
@@ -166,12 +166,12 @@ void show_questions(int num)
 			exit(EXIT_SUCCESS);
 
 		/* validate if the answer is correct */
-		const char *validator = answers(_random(), ans);
+		const char *validator = answers(_rand, ans);
 
 		printf(" %s\n", validator);
-		if (strcmp(validator, pass) == 0)
+		if (strcmp(validator, pass))
 			score = score + 1;
-		else if (strcmp(validator, fail_a) == 0
+		else if (strcmp(validator, fail_a)
 		|| strcmp(validator, fail_b) == 0 || strcmp(validator, fail_c) == 0)
 			score = score - 1;
 		else
