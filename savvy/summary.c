@@ -2,6 +2,8 @@
 
 #include "show_quiz.h"
 #include "summary.h"
+#include "date.h"
+#include "time.h"
 
 /**
  * get_percentage - function to calculate the percentage from score
@@ -11,16 +13,16 @@
 
 float get_percentage(void)
 {
-	int nm_questions, sccore, *p;
-	float prcentage;
+	int num_questions, score, *p;
+	float percentage;
 
 	p = get_num_score();
-	nm_questions = p[0];
-	sccore = p[1];
+	num_questions = p[0];
+	score = p[1];
 
-	prcentage = ((float) sccore / nm_questions) * 100;
+	percentage = ((float) score / num_questions) * 100;
 
-	return (prcentage);
+	return (percentage);
 }
 
 /**
@@ -38,11 +40,11 @@ void get_summary(float num)
 {
 
 	if (num <= 39)
-		printf("\033[0;31m%.f\033[0m\n", num);
+		printf(RED "%.f" DEFAULT "\n", num);
 	else if (num >= 40 && num <= 69)
-		printf("\033[0;33m%.f\033[0m\n", num);
+		printf(YELLOW "%.f" DEFAULT "\n", num);
 	else
-		printf("\033[0;32m%.f\033[0m\n", num);
+		printf(GREEN "%.f"DEFAULT "\n", num);
 }
 
 /**
@@ -54,8 +56,19 @@ void get_summary(float num)
 
 void summary(void)
 {
+	int sec = seconds();
+	int min = minute();
+	int hr = hour();
+	int day_of_mon = day_of_month();
+	int mon = month();
+	int yr = year();
 	float perentage = get_percentage();
 
+	printf(GREEN);
+	printf("|--------------------------------------------------------|\n");
+	printf("| |--------<SUMMARY>--------<%d-%d-%d %d:%d:%d>--------| |\n");
+	printf("|--------------------------------------------------------|\n");
+	printf("| ");
 	if (perentage <= 39)
 		printf(RED "%.f" DEFAULT "\n", perentage);
 	else if (perentage >= 40 && perentage <= 69)
@@ -63,3 +76,4 @@ void summary(void)
 	else
 		printf(GREEN "%.f" DEFAULT "\n", perentage);
 }
+//day_of_mon, mon, yr, hr, min, sec
