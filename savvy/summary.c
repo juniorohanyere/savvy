@@ -4,6 +4,7 @@
 #include "summary.h"
 #include "date.h"
 #include "time.h"
+#include "colors.h"
 
 /**
  * get_percentage - function to calculate the percentage from score

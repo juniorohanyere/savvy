@@ -1,6 +1,7 @@
 #include <string.h>
 
 #include "ref.h"
+#include "../../savvy/colors.h"
 
 /**
  * answers - function to validate answer

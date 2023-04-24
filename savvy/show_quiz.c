@@ -8,6 +8,7 @@
 #include "../quiz/c/quiz.h"
 #include "show_quiz.h"
 #include "summary.h"
+#include "colors.h"
 
 static int num_questions;
 static int score;
