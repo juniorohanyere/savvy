@@ -55,7 +55,7 @@ int main(int argc, char *argv[])
 {
 	commands(argc, argv);
 
-	printf("Welcome To SAVVY\n");
+	printf("Welcome To savvy quiz\n");
 	printf("Try to answer the questions YOURSELF, ");
 	printf("so you can know how much you're improving.");
 	printf("YOU ARE NOT FORCED!\n");

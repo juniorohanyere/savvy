@@ -9,9 +9,12 @@
 int seconds(void)
 {
 	time_t t;
-	struct tm date_time = *localtime(&t);
-	int _seconds = date_time.tm_sec;
+	struct tm date_time;
+	int _seconds;
 
+	t = time(NULL);
+	date_time = *localtime(&t);
+	_seconds = date_time.tm_sec;
 	return (_seconds);
 }
 
@@ -24,9 +27,12 @@ int seconds(void)
 int minute(void)
 {
 	time_t t;
-	struct tm date_time = *localtime(&t);
-	int _minute = date_time.tm_min;
+	struct tm date_time;
+	int _minute;
 
+	t = time(NULL);
+	date_time = *localtime(&t);
+	_minute = date_time.tm_min;
 	return (_minute);
 }
 
@@ -38,9 +44,12 @@ int minute(void)
 
 int hour(void)
 {
-	time_t t = time(NULL);
-	struct tm date_time = *localtime(&t);
-	int _hour = date_time.tm_hour;
+	time_t t;
+	struct tm date_time;
+	int _hour;
 
+	t = time(NULL);
+	date_time = *localtime(&t);
+	_hour = date_time.tm_hour;
 	return (_hour);
 }

@@ -16,17 +16,17 @@
 
 void arg_2(char str[], char *str1[])
 {
-	if (strcmp(str1[1], "-h") || strcmp(str1[1], "--help"))
+	if (strcmp(str1[1], "-h") == 0 || strcmp(str1[1], "--help") == 0)
 	{
 		/* display a list of usable command options */
 	}
-	else if (strcmp(str1[1], "-v") || strcmp(str1[1], "--version"))
+	else if (strcmp(str1[1], "-v") == 0 || strcmp(str1[1], "--version") == 0)
 	{
 		printf("\n");
-		printf("savvy " GREEN "%s " DEFAULT);
-		printf("created by " BOLD_BLUE "Twin J" DEFAULT "\n\n", str);
+		printf("savvy " GREEN "%s " DEFAULT, str);
+		printf("created by " BOLD_BLUE "Twin J" DEFAULT "\n\n");
 	}
-	else if (strcmp(str1[1], "-S") || strcmp(str1[1], "--summary"))
+	else if (strcmp(str1[1], "-S") == 0 || strcmp(str1[1], "--summary") == 0)
 		get_summary(get_percentage());
 	else
 	{

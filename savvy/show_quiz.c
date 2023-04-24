@@ -25,11 +25,11 @@ static int score;
 
 int isnumber(char str[])
 {
-	int length, flag;
+	int length, i, flag;
 
 	length = strlen(str);
 
-	for (int i = 0; i < length; i++)
+	for (i = 0; i < length; i++)
 
 	{
 		/**
@@ -86,21 +86,21 @@ int _random(void)
 
 void get_questions(void)
 {
+	int flag, _isnumber;
+	char str[1000];
+
 	while (TRUE)
 	{
 		printf("Please enter your desired number of questions. ");
 		printf("The recommended is also the minimum you can answer, ");
 		printf("which is 10 >> ");
 
-		int flag;
-		char str[1000];
-
 		flag = scanf("%s", str);
 		/* check if CTRL-D is entered, if so, the program should exit successfully */
 		if (flag == EOF)
 
 			exit(EXIT_SUCCESS);
-		int _isnumber = isnumber(str);
+		_isnumber = isnumber(str);
 
 		if (_isnumber == 1)
 		{
@@ -142,32 +142,32 @@ void get_questions(void)
 
 void show_questions(int num)
 {
+	int i, j, _rand, flag;
+	char ans[1];
 	char *pass = GREEN "Passed" DEFAULT;
 	char *fail_a = RED "Failed " GREEN "[a]" DEFAULT;
 	char *fail_b = RED "Failed " GREEN "[b]" DEFAULT;
 	char *fail_c = RED "Failed " GREEN "[c]" DEFAULT;
+	const char *validator, *_question;
 
-	for (int i = 0; i < num; i++)
+	for (i = 0; i < num; i++)
 	{
-		int _rand = _random(), j = i + 1;
+		_rand = _random();
+		j = i + 1;
 
 		/* Display a question */
-		const char *_question = question(_rand);
+		_question = question(_rand);
 
 		printf("\n");
 		printf("%d. %s\n\n ", j, _question);
 
 		/* creating a string variable to accept answers from user */
-		char ans[1];
-
-		int flag = scanf("%s", ans);
-
+		flag = scanf("%s", ans);
 		if (flag == EOF)
 			exit(EXIT_SUCCESS);
 
 		/* validate if the answer is correct */
-		const char *validator = answers(_rand, ans);
-
+		validator = answers(_rand, ans);
 		printf(" %s\n", validator);
 		if (strcmp(validator, pass))
 			score = score + 1;

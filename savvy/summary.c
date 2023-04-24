@@ -65,10 +65,11 @@ void summary(void)
 	float perentage = get_percentage();
 
 	printf(GREEN);
-	printf("|--------------------------------------------------------|\n");
-	printf("| |--------<SUMMARY>--------<%d-%d-%d %d:%d:%d>--------| |\n");
-	printf("|--------------------------------------------------------|\n");
-	printf("| ");
+	printf(
+	"|--------------------------------------------------------|\n"
+	"| |--------<SUMMARY>--------<%02d-%02d-%04d %02d:%02d:%02d>--------|\n"
+	"|--------------------------------------------------------|\n"
+	"| ", day_of_mon, mon, yr, hr, min, sec);
 	if (perentage <= 39)
 		printf(RED "%.f" DEFAULT "\n", perentage);
 	else if (perentage >= 40 && perentage <= 69)
@@ -76,4 +77,4 @@ void summary(void)
 	else
 		printf(GREEN "%.f" DEFAULT "\n", perentage);
 }
-//day_of_mon, mon, yr, hr, min, sec
+/* day_of_mon, mon, yr, hr, min, sec */
