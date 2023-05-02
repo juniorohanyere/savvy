@@ -1,5 +1,4 @@
 #ifndef SHOW_QUIZ_H
-
 #define SHOW_QUIZ_H
 
 #define TRUE 1

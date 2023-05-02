@@ -4,8 +4,8 @@
 #include <string.h>
 #include <time.h>
 
-#include "../quiz_ref/c/ref.h"
-#include "../quiz/c/quiz.h"
+#include "ref.h"
+#include "quiz.h"
 #include "show_quiz.h"
 #include "summary.h"
 #include "colors.h"
@@ -145,10 +145,14 @@ void show_questions(int num)
 {
 	int i, j, _rand, flag;
 	char ans[1];
-	char *pass = GREEN "Passed" DEFAULT;
-	char *fail_a = RED "Failed " GREEN "[a]" DEFAULT;
-	char *fail_b = RED "Failed " GREEN "[b]" DEFAULT;
-	char *fail_c = RED "Failed " GREEN "[c]" DEFAULT;
+
+	/**
+	 * char *pass = GREEN "Passed" DEFAULT;
+	 * char *fail_a = RED "Failed " GREEN "[a]" DEFAULT;
+	 * char *fail_b = RED "Failed " GREEN "[b]" DEFAULT;
+	 * char *fail_c = RED "Failed " GREEN "[c]" DEFAULT;
+	*/
+
 	const char *validator, *_question;
 
 	for (i = 0; i < num; i++)
@@ -170,15 +174,16 @@ void show_questions(int num)
 		/* validate if the answer is correct */
 		validator = answers(_rand, ans);
 		printf(" %s\n", validator);
-		if (strcmp(validator, pass))
+		if (strcmp(validator, PASS) == 0)
 			score = score + 1;
-		else if (strcmp(validator, fail_a)
-		|| strcmp(validator, fail_b) == 0 || strcmp(validator, fail_c) == 0)
+		else if (strcmp(validator, FAIL_A) == 0
+		|| strcmp(validator, FAIL_B) == 0 || strcmp(validator, FAIL_C) == 0)
 			score = score - 1;
 		else
 			score = score;
 	}
 	summary();
+	score = 0;
 }
 
 /**

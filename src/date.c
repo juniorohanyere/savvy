@@ -3,7 +3,7 @@
 /**
  * day_of_month - function to get current day of month
  *
- * Description: day of week is in two digits, formatted in 'DD'
+ * Description: day of month is in two digits, formatted in 'DD'
  *
  * Return: return the current day of the month
 */

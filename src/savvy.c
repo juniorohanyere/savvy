@@ -2,12 +2,13 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "options/arg_1.h"
-#include "options/arg_2.h"
+#include "arg_1.h"
+#include "arg_2.h"
 #include "show_quiz.h"
 
 /**
  * commands - function to accept command line arguments
+ *	      from main function
  *
  * @num: number of command line arguments to accept
  * @str: array pointer holding the arguments entered

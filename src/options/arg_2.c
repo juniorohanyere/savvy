@@ -2,8 +2,8 @@
 #include <string.h>
 
 #include "arg_2.h"
-#include "../summary.h"
-#include "../colors.h"
+#include "summary.h"
+#include "colors.h"
 
 /**
  * arg_2 - function to assign options for the second
