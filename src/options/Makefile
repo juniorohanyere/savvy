@@ -15,4 +15,4 @@ arg_2.o: arg_2.c arg_2.h ../summary.h ../colors.h
 	$(CC) $(CFLAGS) -c arg_2.c
 
 clean:
-	rm *.o
+	rm $(OBJS)

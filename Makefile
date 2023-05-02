@@ -1,3 +1,5 @@
+# top level makefile
+
 CC = gcc
 
 TARGET = savvy
