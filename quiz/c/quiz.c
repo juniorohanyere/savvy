@@ -2,7 +2,7 @@
 
 /* questions here */
 
-static char *questions[] = {
+char *questions[] = {
 
 	/* index 0 */
 
@@ -93,6 +93,40 @@ static char *questions[] = {
 	"a. while (a)\n   {\n\tprintf(\"%d\", a * a);\n\ta++;\n   }\n\n"
 	"b. while (a <= 100)\n   {\n\tprintf(\"%d\", a + a);\n\ta++;\n   }\n\n"
 	"c. while (a <= 100)\n   {\n\tprintf(\"%d\", a * a);\n\ta++;\n   }\n\n"
+	"d. I don't know",
+
+	/* index 11 */
+
+	"What will be the outcome of the following conditional statement "
+	"if the value of variable s is 10?\n\n"
+	"\ts >= 10 && s < 25 && s != 12\n\n"
+	"a. TRUE\n"
+	"b. FALSE\n"
+	"c. NULL\n"
+	"d. I don't know",
+
+	/* index 12 */
+
+	"Which of the following best describes the order of precedence with regards to operators in C?\n\n"
+	"a. unary, mathematical, equality, relational, assignment, logical\n"
+	"b. unary, mathematical, relational, equality, logical, assignment\n"
+	"c. mathematical, relational, logical, assignment, equality, unary\n"
+	"d. I don't know",
+
+	/* index 13 */
+
+	"What is wrong with this statement? myName = \"Robin\";\n\n"
+	"a. nothing is wrong with the statement\n"
+	"b. an equality operator is supposed to be used to assign a value to the string variable\n"
+	"c. an assignment operator cannot be used to assign a value to the string variable\n"
+	"d. I don't know",
+
+	/* index 14 */
+
+	"How do you determine the length of a string value that was stored in a variable?\n\n"
+	"a. the use of the strlen() function\n"
+	"b. the use of the strcpy() function\n"
+	"c. the use of the scanf() function\n"
 	"d. I don't know",
 };
 
