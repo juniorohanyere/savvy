@@ -10,8 +10,8 @@
 #include "summary.h"
 #include "colors.h"
 
-static int num_questions;
-static int score;
+static int num_questions, score;
+static int a, b, c;
 
 /**
  * isnumber - User defined function
@@ -145,16 +145,9 @@ void show_questions(int num)
 {
 	int i, j, _rand, flag;
 	char ans[1];
-
-	/**
-	 * char *pass = GREEN "Passed" DEFAULT;
-	 * char *fail_a = RED "Failed " GREEN "[a]" DEFAULT;
-	 * char *fail_b = RED "Failed " GREEN "[b]" DEFAULT;
-	 * char *fail_c = RED "Failed " GREEN "[c]" DEFAULT;
-	*/
-
 	const char *validator, *_question;
 
+	a = b = c = 0;
 	for (i = 0; i < num; i++)
 	{
 		_rand = _random();
@@ -162,7 +155,6 @@ void show_questions(int num)
 
 		/* Display a question */
 		_question = question(_rand);
-
 		printf("\n");
 		printf("%d. %s\n\n ", j, _question);
 
@@ -175,15 +167,24 @@ void show_questions(int num)
 		validator = answers(_rand, ans);
 		printf(" %s\n", validator);
 		if (strcmp(validator, PASS) == 0)
+		{
 			score = score + 1;
+			a++;
+		}
 		else if (strcmp(validator, FAIL_A) == 0
 		|| strcmp(validator, FAIL_B) == 0 || strcmp(validator, FAIL_C) == 0)
+		{
 			score = score - 1;
+			b++;
+		}
 		else
+		{
 			score = score;
+			c++;
+		}
 	}
 	summary();
-	score = 0;
+	score = a = b = c = 0;
 }
 
 /**
@@ -197,11 +198,13 @@ void show_questions(int num)
 
 int *get_num_score(void)
 {
-	int array[2], *p;
+	int array[5], *p;
 
 	array[0] = num_questions;
 	array[1] = score;
+	array[2] = a;
+	array[3] = b;
+	array[4] = c;
 	p = array;
-
 	return (p);
 }

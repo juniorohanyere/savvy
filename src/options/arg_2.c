@@ -2,6 +2,7 @@
 #include <string.h>
 
 #include "arg_2.h"
+#include "get_summary.h"
 #include "summary.h"
 #include "colors.h"
 
@@ -28,7 +29,7 @@ void arg_2(char str[], char *str1[])
 		printf("created by " BOLD_BLUE "Twin J" DEFAULT "\n\n");
 	}
 	else if (strcmp(str1[1], "-S") == 0 || strcmp(str1[1], "--summary") == 0)
-		get_summary(get_percentage());
+		summary();
 	else
 	{
 		printf("Unknown option: " RED "%s" DEFAULT, str1[1]);
