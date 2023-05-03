@@ -69,12 +69,16 @@ void summary(void)
 
 int handle_width(void)
 {
-	int length;
+	int length, i;
 	float percentage = get_percentage();
-	char str[10];
+	char str[10], s[] = "%20.2f%%"
 
 	sprintf(str, "%.2f", percentage);
 	length = strlen(str);
+
+	for (i = 0; i < length; i++)
+	{
+		
 	if (length == 4)
 		printf("%20.2f%%");
 	if (length == 5)
