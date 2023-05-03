@@ -1,10 +1,8 @@
 ## About
 
-`savvy` is an open source project distributed under the `GPL-3.0 license` terms. Owned and authored by [Twin J](https://www.linkedin.com/in/juniorohanyere)
+`savvy` is an open source project distributed under the `GPL-3.0 license` terms. Owned and authored by [Junior Ohanyere](https://www.linkedin.com/in/juniorohanyere)
 
-This project is currently undergoing development. A `pre-release` of the program has been published on [github](https://github.com/juniorohanyere/do_hard_things/releases). No official release yet, but I hope to get it ready sooner.
-
-[Learn more](https://twinjnr.blogspot.com) about `savvy`.
+This project is currently undergoing development. A `pre-release` of the program has been published on [github](https://github.com/juniorohanyere/savvy/releases). No official release yet, but I hope to get it ready sooner.
 
 ## Overview
 
@@ -37,9 +35,9 @@ This project shall be loaded with lots of questions based on the programming lan
 
 ## Installation
 
-**savvy** can be installed from the [github release page](https://github.com/juniorohanyere/do_hard_things/releases). A binary file is available on the release page for linux systems. It was tested on a `Kali Linux` system.
-You can also [build from source] in case the binary release does not work for you. There are two releases for that. One in [zip] format and the other in [tar.gz] format.
-Also check out [setting up do_hard_things on android devices].
+**savvy** can be installed from the [github release page](https://github.com/juniorohanyere/savvy/releases). A binary file is available on the release page for linux systems. It was built and tested on a `64 bit`  `Kali Linux` system.
+You also build from source in case the binary release does not work for you. There are two releases for that. One in [zip] format and the other in [tar.gz] format.
+Also, the program can be installed on android device. Check out how to set up `termux` on an android device
 
-### More on https://twinjnr.blogspot.com
+### More updates loading...
 
