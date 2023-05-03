@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include "show_quiz.h"
 #include "get_summary.h"
@@ -52,10 +53,35 @@ void summary(void)
 		"|--------------------------------------------------------|\n"
 		"| |--------<SUMMARY>--------<%02d-%02d-%04d %02d:%02d:%02d>--------|\n"
 		"|--------------------------------------------------------|\n"
-		"| " GREEN "~%-4d+" DEFAULT "%-4d" RED "-" DEFAULT
-		"%-4d" YELLOW ":" DEFAULT "%-4d " GREEN "=" DEFAULT
-		"%d\t\t\t%s%.2f%%" GREEN "\t |" DEFAULT "\n",
+		"| " GREEN "~%d\t+" DEFAULT "%d\t" RED "-" DEFAULT
+		"%d\t" YELLOW ":" DEFAULT "%d\t" GREEN "=" DEFAULT
+		"%d%s%10.2f%%" GREEN "|" DEFAULT "\n",
 		day_of_mon, mon, yr, hr, min, sec,
 		num_questions, positive, negative, zero, score, flag, percentage);
 	printf("\n");
+}
+
+/**
+ * handle_width - function to return the length of the percentage
+ *
+ * Return: always return 0
+*/
+
+int handle_width(void)
+{
+	int length;
+	float percentage = get_percentage();
+	char str[10];
+
+	sprintf(str, "%.2f", percentage);
+	length = strlen(str);
+	if (length == 4)
+		printf("%20.2f%%");
+	if (length == 5)
+		printf("%19.2f%%");
+	if (length == 6)
+		printf("%18.2f%%");
+	if (length == 7)
+		printf("%17.2f%%");
+	return (0);
 }
