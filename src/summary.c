@@ -7,10 +7,7 @@
 #include "date.h"
 #include "time.h"
 #include "colors.h"
-
-#define FORMAT_T str
-
-/*void handle_width(float num);*/
+#include "summary.h"
 
 /**
  * print_summary - function to print the result of the quiz
@@ -28,6 +25,7 @@ void print_summary(void)
 	int length, i;
 	static int j;
 	char str[sizeof(int) * 10] = "%", s[sizeof(int) * 10] = " ";
+	char space[sizeof(int) * 10] = "";
 
 	summary = get_summary();
 	if (summary->percentage <= 39)
@@ -49,18 +47,19 @@ void print_summary(void)
 		summary->zero, summary->score, flag);
 	sprintf(s, "%.2f", summary->percentage);
 	length = strlen(s);
-	i = 3;
-	j = 20;
+	i = 4;
+	j = 16;
 	while (i <= length)
 	{
 		i++;
 		j--;
+		strcat(space, " ");
 	}
 	sprintf(s, "%d", j);
 	strcat(str, s);
 	strcat(str, ".2f%%");
-	printf(FORMAT_T, summary->percentage);
-	printf(GREEN "|" DEFAULT "\n");
+	printf(FORMAT_WIDTH, summary->percentage);
+	printf(GREEN "%s|" DEFAULT "\n", space);
 
 }
 
