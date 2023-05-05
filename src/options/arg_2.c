@@ -2,7 +2,6 @@
 #include <string.h>
 
 #include "arg_2.h"
-#include "get_summary.h"
 #include "summary.h"
 #include "colors.h"
 
