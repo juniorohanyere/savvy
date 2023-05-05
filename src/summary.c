@@ -3,7 +3,6 @@
 #include <string.h>
 
 #include "show_quiz.h"
-#include "get_summary.h"
 #include "date.h"
 #include "time.h"
 #include "colors.h"
