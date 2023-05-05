@@ -8,42 +8,31 @@
 #include "time.h"
 #include "colors.h"
 
-/**
- * get_num_questions - function to get the number of questions
- *		       entered by the user for a particular quiz
- *
- * Return: return the number of questions entered
-*/
+#define FORMAT_T str
 
-int get_num_questions(void)
-{
-	int num_questions;
-	int *p;
-
-	p = get_num_score();
-	num_questions = p[0];
-	return (num_questions);
-}
+/*void handle_width(float num);*/
 
 /**
- * summary - function to print the result of the quiz
+ * print_summary - function to print the result of the quiz
  *	     as soon as the quiz has been taken
  *
  * Return: return nothing
 */
 
-void summary(void)
+void print_summary(void)
 {
+	get_summary_t *summary;
 	int sec = seconds(), min = minute(), hr = hour();
 	int day_of_mon = day_of_month(), mon = month(), yr = year();
-	int num_questions = get_num_questions(), score = get_score();
-	int positive = is_positive(), negative = is_negative(), zero = is_zero();
-	float percentage = get_percentage();
 	char *flag;
+	int length, i;
+	static int j;
+	char str[sizeof(int) * 10] = "%", s[sizeof(int) * 10] = " ";
 
-	if (percentage <= 39)
+	summary = get_summary();
+	if (summary->percentage <= 39)
 		flag = RED;
-	else if (percentage >= 40 && percentage <= 69)
+	else if (summary->percentage >= 40 && summary->percentage <= 69)
 		flag = YELLOW;
 	else
 		flag = GREEN;
@@ -54,11 +43,25 @@ void summary(void)
 		"| |--------<SUMMARY>--------<%02d-%02d-%04d %02d:%02d:%02d>--------|\n"
 		"|--------------------------------------------------------|\n"
 		"| " GREEN "~%d\t+" DEFAULT "%d\t" RED "-" DEFAULT
-		"%d\t" YELLOW ":" DEFAULT "%d\t" GREEN "=" DEFAULT
-		"%d%s%10.2f%%" GREEN "|" DEFAULT "\n",
+		"%d\t" YELLOW ":" DEFAULT "%d\t" GREEN "=" DEFAULT "%d\t%s",
 		day_of_mon, mon, yr, hr, min, sec,
-		num_questions, positive, negative, zero, score, flag, percentage);
-	printf("\n");
+		summary->num_questions, summary->plus, summary->minus,
+		summary->zero, summary->score, flag);
+	sprintf(s, "%.2f", summary->percentage);
+	length = strlen(s);
+	i = 3;
+	j = 20;
+	while (i <= length)
+	{
+		i++;
+		j--;
+	}
+	sprintf(s, "%d", j);
+	strcat(str, s);
+	strcat(str, ".2f%%");
+	printf(FORMAT_T, summary->percentage);
+	printf(GREEN "|" DEFAULT "\n");
+
 }
 
 /**
@@ -67,25 +70,8 @@ void summary(void)
  * Return: always return 0
 */
 
-int handle_width(void)
+/*void handle_width(float num)
 {
-	int length, i;
-	float percentage = get_percentage();
-	char str[10], s[] = "%20.2f%%"
 
-	sprintf(str, "%.2f", percentage);
-	length = strlen(str);
-
-	for (i = 0; i < length; i++)
-	{
-		
-	if (length == 4)
-		printf("%20.2f%%");
-	if (length == 5)
-		printf("%19.2f%%");
-	if (length == 6)
-		printf("%18.2f%%");
-	if (length == 7)
-		printf("%17.2f%%");
-	return (0);
 }
+*/

@@ -11,7 +11,8 @@
 #include "colors.h"
 
 static int num_questions, score;
-static int a, b, c;
+static int plus, minus, zero;
+static float percentage;
 
 /**
  * isnumber - User defined function
@@ -147,7 +148,7 @@ void show_questions(int num)
 	char ans[1];
 	const char *validator, *_question;
 
-	a = b = c = 0;
+	plus = minus = zero = 0;
 	for (i = 0; i < num; i++)
 	{
 		_rand = _random();
@@ -167,44 +168,41 @@ void show_questions(int num)
 		validator = answers(_rand, ans);
 		printf(" %s\n", validator);
 		if (strcmp(validator, PASS) == 0)
-		{
-			score = score + 1;
-			a++;
-		}
+			score = score + 1, plus++;
 		else if (strcmp(validator, FAIL_A) == 0
 		|| strcmp(validator, FAIL_B) == 0 || strcmp(validator, FAIL_C) == 0)
-		{
-			score = score - 1;
-			b++;
-		}
+			score = score - 1, minus++;
 		else
-		{
-			score = score;
-			c++;
-		}
+			score = score + 0, zero++;
 	}
-	summary();
-	score = a = b = c = 0;
+	percentage = ((float) score / num_questions) * 100;
+	print_summary();
+	score = plus = minus = zero = 0;
 }
 
 /**
- * get_num_score - function to return
- *		   the number of questions entered by user
- *		   and the score gotten from the quiz
+ * get_summary - function to assign values to a struct elements
  *
- * Return: return the an integer array containing
- *		  the number of qustions and the score
+ * Description: assigns values to the elements
+ *		of the get_summary_elements struct
+ * Return: return a pointer to the get_summary_elements struct (get_summary_t)
 */
 
-int *get_num_score(void)
+get_summary_t *get_summary(void)
 {
-	int array[5], *p;
+	/* define a pointer to the get_summary_elements struct */
+	get_summary_t *elements;
 
-	array[0] = num_questions;
-	array[1] = score;
-	array[2] = a;
-	array[3] = b;
-	array[4] = c;
-	p = array;
-	return (p);
+	/* allocate enough memory for the struct pointer */
+	elements = malloc(sizeof(get_summary_t));
+
+	/* assign the values */
+	elements->num_questions = num_questions;
+	elements->score = score;
+	elements->percentage = percentage;
+	elements->plus = plus;
+	elements->minus = minus;
+	elements->zero = zero;
+	return (elements);
+	free(elements);
 }

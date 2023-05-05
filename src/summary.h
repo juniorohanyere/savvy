@@ -2,7 +2,7 @@
 
 #define SUMMARY_H
 
-int get_num_questions(void);
-void summary(void);
+
+void print_summary(void);
 
 #endif	/* SUMMARY_H */
