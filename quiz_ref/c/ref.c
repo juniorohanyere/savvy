@@ -16,7 +16,7 @@
  * Return: Return a string
 */
 
-const char *answers(int num, char str[])
+const char *answers(int num, char *str)
 {
 	if ((num == 0 || num == 1 || num ==  3 || num == 11 || num == 14)
 		&& strcmp(str, "a") == 0)
