@@ -36,8 +36,12 @@ This project shall be loaded with lots of questions based on the programming lan
 ## Installation
 
 **savvy** can be installed from the [github release page](https://github.com/juniorohanyere/savvy/releases). A binary file is available on the release page for linux systems. It was built and tested on a `64 bit`  `Kali Linux` system.
-You also build from source in case the binary release does not work for you. There are two releases for that. One in [zip] format and the other in [tar.gz] format.
+You also build from source in case the binary release does not work for you. There are two releases for that. One in `zip` format and the other in `tar.gz` format.
 Also, the program can be installed on android device. Check out how to set up `termux` on an android device
+
+## Two Minutes Watch!
+
+https://user-images.githubusercontent.com/106378800/236439393-2c51fc1a-a363-4443-8943-12b17a058ec5.mp4
 
 ### More updates loading...
 
