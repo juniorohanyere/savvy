@@ -145,9 +145,10 @@ void get_questions(void)
 void show_questions(int num)
 {
 	int i, j, _rand, flag;
-	char ans[1];
+	char *ans;
 	const char *validator, *_question;
 
+	ans = malloc(sizeof(char));
 	plus = minus = zero = 0;
 	for (i = 0; i < num; i++)
 	{
@@ -178,6 +179,7 @@ void show_questions(int num)
 	percentage = ((float) score / num_questions) * 100;
 	print_summary();
 	score = plus = minus = zero = 0;
+	free(ans);
 }
 
 /**
