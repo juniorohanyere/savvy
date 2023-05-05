@@ -2,6 +2,7 @@
 
 #define SUMMARY_H
 
+#define FORMAT_WIDTH str
 
 void print_summary(void);
 
