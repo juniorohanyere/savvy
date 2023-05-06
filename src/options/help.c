@@ -30,8 +30,8 @@ void help_message(void)
 
 void option_warning(char str[])
 {
-        printf("Invalid option: " RED "%s" DEFAULT, str);
-        printf("\n");
+	printf("Invalid option: " RED "%s" DEFAULT, str);
+	printf("\n");
 }
 
 /**

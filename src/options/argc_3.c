@@ -8,6 +8,8 @@
  * argc_3 - function to assign options for the third
  *	    command line argument
  *
+ * @str: variable to retrieve the third command line argument
+ *
  * Return: return nothing
 */
 
@@ -22,7 +24,8 @@ void argc_3(char *str[])
 		{
 			get_questions(str[2]);	/**
 						 * the third argument is retrieved in this function
-						 * and furtherly converted to an int if the argument does not contain letters
+						 * and furtherly converted to an int
+						 * if the argument does not contain letters
 						*/
 		}
 		else

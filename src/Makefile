@@ -25,5 +25,14 @@ summary.o: summary.c summary.h show_quiz.h date.h time.h colors.h
 time.o: time.c
 	$(CC) $(CFLAGS) -c time.c
 
+# betty documentation and coding style
+betty:
+	betty *.c *.h
+
+.PHONY: clean clean-all
+
 clean:
-	rm $(OBJS)
+	-rm $(OBJS)
+
+clean-all:
+	@-rm *.o

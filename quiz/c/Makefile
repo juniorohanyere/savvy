@@ -9,5 +9,14 @@ all: $(OBJS)
 quiz.o: quiz.c
 	$(CC) $(CFLAGS) -c quiz.c
 
+# betty documentation and coding style
+betty:
+	betty *.c *.h
+
+.PHONY: clean clean-all
+
 clean:
-	rm $(OBJS)
+	-rm $(OBJS)
+
+clean-all:
+	@-rm *.o

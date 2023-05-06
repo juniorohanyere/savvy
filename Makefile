@@ -20,15 +20,27 @@ subsystem:
 	$(MAKE) -C src
 	$(MAKE) -C src/options
 
+betty:
+	$(MAKE) -C quiz/c betty
+	$(MAKE) -C quiz_ref/c betty
+	$(MAKE) -C src betty
+	$(MAKE) -C src/options betty
+
+install-betty:
+	@./install-betty.sh
+
 .PHONY: clean clean-all install
 
 install:
-	./install.sh
+	@-./install.sh
 clean:
-	$(MAKE) -C quiz/c clean
-	$(MAKE) -C quiz_ref/c clean
-	$(MAKE) -C src clean
-	$(MAKE) -C src/options clean
+	-$(MAKE) -C quiz/c clean
+	-$(MAKE) -C quiz_ref/c clean
+	-$(MAKE) -C src clean
+	-$(MAKE) -C src/options clean
 
 clean-all:
-	@-rm $(OBJS)
+	-$(MAKE) -C quiz/c clean-all
+	-$(MAKE) -C quiz_ref/c clean-all
+	-$(MAKE) -C src clean-all
+	-$(MAKE) -C src/options clean-all

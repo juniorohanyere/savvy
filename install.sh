@@ -16,7 +16,8 @@ then
 
 elif [ "$(id -u)" != "0" ]
 then
-	echo "To install savvy, you need root access. Install with sudo please"
+	echo "Installing savvy on your system requires root access."
+	echo "Run: sudo make install"
 	exit 1
 
 fi
