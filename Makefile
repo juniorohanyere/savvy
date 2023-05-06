@@ -20,10 +20,15 @@ subsystem:
 	$(MAKE) -C src
 	$(MAKE) -C src/options
 
-.PHONY: clean
+.PHONY: clean clean-all install
 
+install:
+	./install.sh
 clean:
 	$(MAKE) -C quiz/c clean
 	$(MAKE) -C quiz_ref/c clean
 	$(MAKE) -C src clean
 	$(MAKE) -C src/options clean
+
+clean-all:
+	@-rm $(OBJS)
