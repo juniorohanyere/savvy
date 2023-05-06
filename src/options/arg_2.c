@@ -25,15 +25,13 @@ void arg_2(char str[], char *str1[])
 	{
 		printf("\n");
 		printf("savvy " GREEN "%s " DEFAULT, str);
-		printf("created by " BOLD_BLUE "Twin J" DEFAULT "\n\n");
+		printf("created by " BOLD_BLUE "Junior Ohanyere" DEFAULT "\n\n");
 	}
 	else if (strcmp(str1[1], "-S") == 0 || strcmp(str1[1], "--summary") == 0)
 		print_summary();
 	else
 	{
-		printf("Unknown option: " RED "%s" DEFAULT, str1[1]);
-		printf("\n");
-
+		warning(str1[1]);
 		help_message();
 	}
 }
@@ -49,4 +47,10 @@ void help_message(void)
 	printf("Please use the " YELLOW "-h " DEFAULT);
 	printf("or " YELLOW "--help " DEFAULT "option ");
 	printf("to view a list of available commands and their use.\n\n");
+}
+
+void warning(char str[])
+{
+	printf("Unknown option: " RED "%s" DEFAULT, str);
+	printf("\n");
 }
