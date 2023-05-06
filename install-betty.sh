@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# script to install betty by running make install-betty
+
 TERMUX_HOME_PATH="/data/data/com.termux/files/home"
 
 if [[ $HOME = ${TERMUX_HOME_PATH} ]]

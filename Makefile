@@ -20,7 +20,8 @@ subsystem:
 	$(MAKE) -C src
 	$(MAKE) -C src/options
 
-install-packages: install-betty
+# not yet implemented
+# install-packages: install-betty
 
 betty:
 	$(MAKE) -C quiz/c betty

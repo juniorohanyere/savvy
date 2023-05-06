@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# script to install the savvy program
+
 APP_NAME="savvy"
 
 APP_PATH="/opt/savvy"
