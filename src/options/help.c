@@ -47,3 +47,18 @@ void input_warning(char str[])
 	printf("Invalid input: " RED "%s" DEFAULT, str);
 	printf("\n");
 }
+
+/**
+ * missing_warning - displays warning message
+ *		     if an input is expected after an option
+ *
+ * @str: the option entered
+ *
+ * Return: return nothing
+*/
+
+void missing_warning(char str[])
+{
+	printf(RED "No input specified:" DEFAULT);
+	printf("Expected an input after " GREEN "%s\n" DEFAULT, str);
+}

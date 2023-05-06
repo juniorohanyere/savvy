@@ -29,6 +29,11 @@ void argc_2(char str[], char *str1[])
 	}
 	else if (strcmp(str1[1], "-S") == 0 || strcmp(str1[1], "--summary") == 0)
 		print_summary();
+	else if (strcmp(str1[1], "-q") == 0 || strcmp(str1[1], "--questions") == 0)
+	{
+		missing_warning(str1[1]);
+		help_message();
+	}
 	else
 	{
 		option_warning(str1[1]);
