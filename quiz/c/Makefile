@@ -11,12 +11,12 @@ quiz.o: quiz.c
 
 # betty documentation and coding style
 betty:
-	betty *.c *.h
+	@betty *.c *.h
 
 .PHONY: clean clean-all
 
 clean:
-	-rm $(OBJS)
+	@-rm $(OBJS)
 
 clean-all:
 	@-rm *.o

@@ -11,7 +11,7 @@ DIRS = quiz/c quiz_ref/c src src/options
 CFLAGS = -Wall -Werror -Wextra -pedantic -std=gnu89
 
 $(TARGET): subsystem
-
+	@echo "make[1]: Linking object files"
 	$(CC) $(CFLAGS) -o $(TARGET) $(OBJS)
 
 subsystem:
