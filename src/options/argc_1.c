@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 #include "argc_2.h"
+#include "help.h"
 
 /**
  * argc_1 - function to handle one command line argument

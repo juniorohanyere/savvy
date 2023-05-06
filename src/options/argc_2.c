@@ -4,6 +4,7 @@
 #include "argc_2.h"
 #include "summary.h"
 #include "colors.h"
+#include "help.h"
 
 /**
  * argc_2 - function to handle two command line arguments
@@ -30,36 +31,7 @@ void argc_2(char str[], char *str1[])
 		print_summary();
 	else
 	{
-		warning(str1[1]);
+		option_warning(str1[1]);
 		help_message();
 	}
-}
-
-/**
- * help_message - function to print a help guide to the standard output
- *
- * Return: return nothing
-*/
-
-void help_message(void)
-{
-	printf("Please use the " YELLOW "-h " DEFAULT);
-	printf("or " YELLOW "--help " DEFAULT "option ");
-	printf("to view a list of available commands and their use.\n\n");
-}
-
-/**
- * warning - function to print a warining menssage
- *	     when there is an invalid use of commands
- *
- * @str: variable to retrieve the command line argument entered
- *
- * Description: prints the argument entered in red as a warning
- *
- * Return: return nothing
-*/
-void warning(char str[])
-{
-	printf("Unknown option: " RED "%s" DEFAULT, str);
-	printf("\n");
 }

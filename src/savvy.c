@@ -4,7 +4,9 @@
 
 #include "argc_1.h"
 #include "argc_2.h"
+#include "argc_3.h"
 #include "show_quiz.h"
+#include "help.h"
 
 /**
  * commands - function to handle command line arguments

@@ -9,54 +9,11 @@
 #include "show_quiz.h"
 #include "summary.h"
 #include "colors.h"
+#include "help.h"
 
 static int num_questions, score;
 static int plus, minus, zero;
 static float percentage;
-
-/**
- * isnumber - User defined function
- *
- * @str: String variable to check and validate
- *
- * Description: A function to check and validate
- *              if input contains letters or not
- *
- * Return: Returns 0 or 1
-*/
-
-int isnumber(char str[])
-{
-	int length, i, flag;
-
-	length = strlen(str);
-
-	for (i = 0; i < length; i++)
-
-	{
-		/**
-		 * if a character is an integer, the isdigit function returns 0.
-		 * otherwise, it returns a value greater than 0
-		 * for alphabets and special characters respectively
-		*/
-
-		if (isdigit(str[i]))
-			flag = 1;
-		else
-		{
-			flag = 0;
-			break;	/**
-				 * Breaks loop once a character is not an integer
-				 * to avoid junks in system memory
-				*/
-		}
-
-	}
-	if (flag == 1)
-		return (1);
-	else
-		return (0);
-}
 
 /**
  * _random - Function to return a random number
@@ -93,8 +50,6 @@ int _random(void)
 
 void get_questions(char str[])
 {
-	int _isnumber;
-
 	while (TRUE)
 	{
 		/**
@@ -103,26 +58,22 @@ void get_questions(char str[])
 		 * printf("which is 10 >> ");
 		*/
 
-		_isnumber = isnumber(str);
+		/* convert the string to integer */
+		num_questions = atoi(str);
 
-		if (_isnumber == 1)
+		if (num_questions >= 10)	/* Minimum required is 10 questions */
 		{
-			/* convert the string to integer */
-			num_questions = atoi(str);
+			printf("\n" GREEN);
+			printf("\tYou Requested To Answer %d Questions", num_questions);
+			printf(DEFAULT "\n\n");
 
-			if (num_questions >= 10)	/* Minimum required is 10 questions */
-			{
-				printf("\n" GREEN);
-				printf("\tYou Requested To Answer %d Questions", num_questions);
-				printf(DEFAULT "\n\n");
-
-				show_questions(num_questions);
-			}
-			else
-				printf(RED "\n Invalid input" DEFAULT "\n\n");
+			show_questions(num_questions);
 		}
 		else
-			printf(RED "\n Invalid input" DEFAULT "\n\n");
+		{
+			input_warning(str);
+			help_message();
+		}
 	}
 }
 
