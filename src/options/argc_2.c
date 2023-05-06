@@ -1,13 +1,12 @@
 #include <stdio.h>
 #include <string.h>
 
-#include "arg_2.h"
+#include "argc_2.h"
 #include "summary.h"
 #include "colors.h"
 
 /**
- * arg_2 - function to assign options for the second
- *	   command line argument
+ * argc_2 - function to handle two command line arguments
  *
  * @str: string containing the current version number of the program
  * @str1: the argument passed to the command line
@@ -15,7 +14,7 @@
  * Return: return nothing
 */
 
-void arg_2(char str[], char *str1[])
+void argc_2(char str[], char *str1[])
 {
 	if (strcmp(str1[1], "-h") == 0 || strcmp(str1[1], "--help") == 0)
 	{
@@ -49,6 +48,16 @@ void help_message(void)
 	printf("to view a list of available commands and their use.\n\n");
 }
 
+/**
+ * warning - function to print a warining menssage
+ *	     when there is an invalid use of commands
+ *
+ * @str: variable to retrieve the command line argument entered
+ *
+ * Description: prints the argument entered in red as a warning
+ *
+ * Return: return nothing
+*/
 void warning(char str[])
 {
 	printf("Unknown option: " RED "%s" DEFAULT, str);

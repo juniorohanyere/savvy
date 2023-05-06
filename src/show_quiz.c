@@ -83,25 +83,26 @@ int _random(void)
  * get_questions - function to accept number of questions,
  *			 to be answered, from user
  *
+ * @str: variable to retrieve third command line argument
+ *
+ * Description: the @str is the number of questions to be answered
+ *		which is converted into an integer if it does not contain letters
+ *
  * Return: return nothing
 */
 
-void get_questions(void)
+void get_questions(char str[])
 {
-	int flag, _isnumber;
-	char str[1000];
+	int _isnumber;
 
 	while (TRUE)
 	{
-		printf("Please enter your desired number of questions. ");
-		printf("The recommended is also the minimum you can answer, ");
-		printf("which is 10 >> ");
+		/**
+		 * printf("Please enter your desired number of questions. ");
+		 * printf("The recommended is also the minimum you can answer, ");
+		 * printf("which is 10 >> ");
+		*/
 
-		flag = scanf("%s", str);
-		/* check if CTRL-D is entered, if so, the program should exit successfully */
-		if (flag == EOF)
-
-			exit(EXIT_SUCCESS);
 		_isnumber = isnumber(str);
 
 		if (_isnumber == 1)
@@ -116,8 +117,6 @@ void get_questions(void)
 				printf(DEFAULT "\n\n");
 
 				show_questions(num_questions);
-
-				/* score and percentage should be printed at this point */
 			}
 			else
 				printf(RED "\n Invalid input" DEFAULT "\n\n");

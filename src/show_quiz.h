@@ -26,7 +26,7 @@ typedef struct get_summary_elements
 
 int isnumber(char str[]);
 int _random(void);
-void get_questions(void);
+void get_questions(char str[]);
 void show_questions(int num);
 get_summary_t *get_summary(void);
 

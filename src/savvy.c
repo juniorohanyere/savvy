@@ -2,13 +2,13 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "arg_1.h"
-#include "arg_2.h"
+#include "argc_1.h"
+#include "argc_2.h"
 #include "show_quiz.h"
 
 /**
- * commands - function to accept command line arguments
- *	      from main function
+ * commands - function to handle command line arguments
+ *	      entered from main function
  *
  * @num: number of command line arguments to accept
  * @str: array pointer holding the arguments entered
@@ -21,16 +21,16 @@ int commands(int num, char *str[])
 	if (num <= 5)
 	{
 		if (num == 1)
-			arg_1();
+			argc_1();
 		else if (num == 2)
 		{
 			char version[] = "v1.0.0";
 
-			arg_2(version, str);
+			argc_2(version, str);
 		}
 		else if (num == 3)
 		{
-			/* I'm tired ! How many if else statements will I have to write */
+			argc_3(str);
 		}
 	}
 	else
@@ -63,7 +63,7 @@ int main(int argc, char *argv[])
 	printf("Also note that you will be PENALIZED ");
 	printf("for wrong answers\n\n");
 
-	get_questions();
+	/* get_questions(); */
 
 	return (0);
 }

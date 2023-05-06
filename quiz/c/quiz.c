@@ -2,7 +2,7 @@
 
 /* questions here */
 
-char *questions[] = {
+const char *questions[] = {
 
 	/* index 0 */
 
@@ -97,8 +97,7 @@ char *questions[] = {
 
 	/* index 11 */
 
-	"What will be the outcome of the following conditional statement "
-	"if the value of variable s is 10?\n\n"
+	"What will be the outcome of the following conditional statement if the value of variable s is 10?\n\n"
 	"\ts >= 10 && s < 25 && s != 12\n\n"
 	"a. TRUE\n"
 	"b. FALSE\n"
