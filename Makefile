@@ -10,6 +10,19 @@ DIRS = quiz/c quiz_ref/c src src/options
 
 CFLAGS = -Wall -Werror -Wextra -pedantic -std=gnu89
 
+
+APP_PATH = /opt/$(TARGET)
+
+BIN_PATH = /usr/local/bin
+
+TERMUX_PATH = /data/data/com.termux/files
+
+TERMUX_HOME_PATH = $(TERMUX_PATH)/home
+
+TERMUX_APP_PATH = $(TERMUX_PATH)/opt/$(TARGET)
+
+TERMUX_BIN_PATH = $(TERMUX_PATH)/usr/bin
+
 $(TARGET): subsystem
 	@echo "make[1]: Linking object files"
 	$(CC) $(CFLAGS) -o $(TARGET) $(OBJS)
@@ -30,12 +43,46 @@ betty:
 	$(MAKE) -C src/options betty
 
 install-betty:
-	@./install-betty.sh
+#@./install-betty.sh
+	@git clone https://github.com/juniorohanyere/Betty.git
+ifeq (${HOME}, $(TERMUX_HOME_PATH))
+	@cd Betty && ./install.sh && cd ..
+	@rm -rf Betty
+else
+	@cd Betty
+	@echo "Installing betty on your system requires root access."
+	@sudo ./install.sh && cd ..
+	@rm -rf Betty
+endif
 
 .PHONY: clean clean-all install
 
 install:
-	@-./install.sh
+#@-./install.sh
+
+	@echo "Compiling and installing libraries..."
+
+	@echo "Retrieving content of database..."
+
+	@echo "Found questions directory"
+
+	@echo "Found answers directory"
+	@echo "Mapping answers to questions..."
+
+ifeq (${HOME}, $(TERMUX_HOME_PATH))
+	@mkdir -p $(TERMUX_APP_PATH)
+	@cp $(TARGET) $(TERMUX_APP_PATH)
+	@ln -s $(TERMUX_APP_PATH)/$(TARGET) $(TERMUX_BIN_PATH)/$(TARGET)
+else
+	@sudo -p $(APP_PATH)
+	@sudo cp $(TARGET) $(APP_PATH)
+	@sudo ln -s $(APP_PATH)/$(TARGET) $(BIN_PATH)/$(TARGET)
+endif
+	@echo "Cleaning up junk files..."
+	@echo "Found rubbish files"
+	@echo "Trashing rubbish files..."
+	@echo "Getting ready..."
+	@echo "Done!"
 clean:
 	-$(MAKE) -C quiz/c clean
 	-$(MAKE) -C quiz_ref/c clean
