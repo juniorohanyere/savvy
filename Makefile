@@ -42,9 +42,12 @@ betty:
 	$(MAKE) -C src betty
 	$(MAKE) -C src/options betty
 
+# install the betty program to be able to check for
+# betty coding and documentation style
 install-betty:
-#@./install-betty.sh
+	rm -rf Betty
 	@git clone https://github.com/juniorohanyere/Betty.git
+
 ifeq (${HOME}, $(TERMUX_HOME_PATH))
 	@cd Betty && ./install.sh && cd ..
 	@rm -rf Betty
@@ -58,29 +61,26 @@ endif
 .PHONY: clean clean-all install
 
 install:
-#@-./install.sh
-
 	@echo "Compiling and installing libraries..."
-
 	@echo "Retrieving content of database..."
-
 	@echo "Found questions directory"
-
 	@echo "Found answers directory"
 	@echo "Mapping answers to questions..."
 
 ifeq (${HOME}, $(TERMUX_HOME_PATH))
 	@mkdir -p $(TERMUX_APP_PATH)
 	@cp $(TARGET) $(TERMUX_APP_PATH)
+	@rm -rf $(TERMUX_BIN_PATH)/$(TARGET)
 	@ln -s $(TERMUX_APP_PATH)/$(TARGET) $(TERMUX_BIN_PATH)/$(TARGET)
 else
-	@sudo -p $(APP_PATH)
+	@sudo mkdir -p $(APP_PATH)
 	@sudo cp $(TARGET) $(APP_PATH)
+	@sudo rm -rf $(BIN_PATH)/$(TARGET)
 	@sudo ln -s $(APP_PATH)/$(TARGET) $(BIN_PATH)/$(TARGET)
 endif
-	@echo "Cleaning up junk files..."
-	@echo "Found rubbish files"
-	@echo "Trashing rubbish files..."
+	@echo "Cleaning up junk folders and files..."
+	@echo "Found rubbish folders and files"
+	@echo "Trashing rubbish folders and files..."
 	@echo "Getting ready..."
 	@echo "Done!"
 clean:
@@ -90,6 +90,7 @@ clean:
 	-$(MAKE) -C src/options clean
 
 clean-all:
+	@-rm savvy
 	-$(MAKE) -C quiz/c clean-all
 	-$(MAKE) -C quiz_ref/c clean-all
 	-$(MAKE) -C src clean-all
