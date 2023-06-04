@@ -2,7 +2,11 @@
 
 `savvy` is an open source project distributed under the `GPL-3.0 license` terms. Owned and authored by [Junior Ohanyere](https://www.linkedin.com/in/juniorohanyere)
 
-This project is currently undergoing development. A `pre-release` of the program has been published on [github](https://github.com/juniorohanyere/savvy/releases). No official release yet, but I hope to get it ready sooner.
+This project is currently **abandoned**. Attention has been diverted to other [project(s)](https://github.com/juniorohanyere/CLIOS.git) :|.
+
+**`NOTE:`** Pull requests will still be accepted
+
+A `pre-release` of the program has been published on [github](https://github.com/juniorohanyere/savvy/releases). No official release yet, but I hope to get it ready sooner.
 
 ## Overview
 
