@@ -1,2 +1,2 @@
-# word-cookies
+# savvy
 Can you match the words?
