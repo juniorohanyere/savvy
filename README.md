@@ -63,7 +63,7 @@ contributions are welcome! If you have any suggestions, bug reports, or feature 
 
 ## license
 
-this project is licensed under the [GPL-v3](LICENSE)
+this project is licensed under the [GPL-3.0 license](LICENSE)
 
 ## acknowledgements
 
@@ -71,4 +71,8 @@ this project is licensed under the [GPL-v3](LICENSE)
 [word chain game](https://github.com/juniorohanyere/word_chain_game.git), [Word Cookies!](todo)
 - the dictionary of valid english words used in the game was sourced from [...](todo)
 
-feel free to customize this README file according to your specific game implementatiin and requirements. Include any additional sections, instructions, or details that are relevant to your game. Happy Gaming!
+## demo
+
+https://github.com/juniorohanyere/savvy/assets/106378800/26e4ef37-cdc2-44c0-bd19-ad06a8c6f683
+
+> feel free to customize this README file according to your specific game implementation and requirements. Include any additional sections, instructions, or details that are relevant to your game. Happy Gaming!
