@@ -72,6 +72,7 @@ this project is licensed under the [GPL-3.0 license](LICENSE)
 - the dictionary of valid english words used in the game was sourced from [...](todo)
 
 ## demo
+
 ![savvy.png](https://github.com/juniorohanyere/savvy/assets/106378800/f647d7d0-6150-44c4-97ef-246163dd1327)
 ![savvy.png](https://github.com/juniorohanyere/savvy/assets/106378800/99cd5a78-d267-47bd-9733-72a5144a4aa5)
 
